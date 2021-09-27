@@ -1,0 +1,20 @@
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
+@import 'font_awesome5_webfont';
+
+@font-face {
+    font-family: 'SangBleuSunrise-Regular';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuSunrise-Regular-WebTrial.eot');
+    src: url('SangBleuSunrise-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuSunrise-Regular-WebTrial.woff2') format('woff2'),
+         url('SangBleuSunrise-Regular-WebTrial.woff') format('woff'),
+         url('SangBleuSunrise-Regular-WebTrial.ttf') format('truetype'),
+         url('SangBleuSunrise-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html body {
+    //font-family: 'SangBleuSunrise-Regular';
+}
