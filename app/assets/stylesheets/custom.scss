@@ -15,6 +15,243 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SangBleuSunrise-Light';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuSunrise-Light-WebTrial.eot');
+    src: url('SangBleuSunrise-Light-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuSunrise-Light-WebTrial.woff2') format('woff2'),
+         url('SangBleuSunrise-Light-WebTrial.woff') format('woff'),
+         url('SangBleuSunrise-Light-WebTrial.ttf') format('truetype'),
+         url('SangBleuSunrise-Light-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SangBleuSunrise-Livre';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuSunrise-Livre-WebTrial.eot');
+    src: url('SangBleuSunrise-Livre-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuSunrise-Livre-WebTrial.woff2') format('woff2'),
+         url('SangBleuSunrise-Livre-WebTrial.woff') format('woff'),
+         url('SangBleuSunrise-Livre-WebTrial.ttf') format('truetype'),
+         url('SangBleuSunrise-Livre-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SangBleuSunrise-Medium';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuSunrise-Medium-WebTrial.eot');
+    src: url('SangBleuSunrise-Medium-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuSunrise-Medium-WebTrial.woff2') format('woff2'),
+         url('SangBleuSunrise-Medium-WebTrial.woff') format('woff'),
+         url('SangBleuSunrise-Medium-WebTrial.ttf') format('truetype'),
+         url('SangBleuSunrise-Medium-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SangBleuSunrise-Bold';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuSunrise-Bold-WebTrial.eot');
+    src: url('SangBleuSunrise-Bold-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuSunrise-Bold-WebTrial.woff2') format('woff2'),
+         url('SangBleuSunrise-Bold-WebTrial.woff') format('woff'),
+         url('SangBleuSunrise-Bold-WebTrial.ttf') format('truetype'),
+         url('SangBleuSunrise-Bold-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'SangBleuEmpire-Regular';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuEmpire-Regular-WebTrial.eot');
+    src: url('SangBleuEmpire-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuEmpire-Regular-WebTrial.woff2') format('woff2'),
+         url('SangBleuEmpire-Regular-WebTrial.woff') format('woff'),
+         url('SangBleuEmpire-Regular-WebTrial.ttf') format('truetype'),
+         url('SangBleuEmpire-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SangBleuKingdom-Regular';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuKingdom-Regular-WebTrial.eot');
+    src: url('SangBleuKingdom-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuKingdom-Regular-WebTrial.woff2') format('woff2'),
+         url('SangBleuKingdom-Regular-WebTrial.woff') format('woff'),
+         url('SangBleuKingdom-Regular-WebTrial.ttf') format('truetype'),
+         url('SangBleuKingdom-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SangBleuRepublic-Regular';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuRepublic-Regular-WebTrial.eot');
+    src: url('SangBleuRepublic-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuRepublic-Regular-WebTrial.woff2') format('woff2'),
+         url('SangBleuRepublic-Regular-WebTrial.woff') format('woff'),
+         url('SangBleuRepublic-Regular-WebTrial.ttf') format('truetype'),
+         url('SangBleuRepublic-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SangBleuVersailles-Regular';
+    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
+    src: url('SangBleuVersailles-Regular-WebTrial.eot');
+    src: url('SangBleuVersailles-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         url('SangBleuVersailles-Regular-WebTrial.woff2') format('woff2'),
+         url('SangBleuVersailles-Regular-WebTrial.woff') format('woff'),
+         url('SangBleuVersailles-Regular-WebTrial.ttf') format('truetype'),
+         url('SangBleuVersailles-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//$text_color: #7f5339;
+//$text_color: #772f1a; // sehr gut
+//$heading_color: #e36414;
+//$link_color: #0f4c5c;
+//$link_color: #335c67;
+//$link_color: #588b8b;
+//$link_color: #077187; //ganz gut
+//$link_color: #275e54; - zu dunkel
+//$link_color: #074f57; - zu dunkel
+//$link_color: #00755d; - weniger gut als die davor
+//$link_color: #2d5038; - viel zu dunkel
+//$hovered_link: #802b00; //zu dunkel
+
+$background_color: #f9f9f9;
+$heading_color: #dc2f02;
+$text_color: #802b00; // sehr gut, aber etwas heller und freundlicher
+//$text_color: #8b6969;
+$link_color: #008081; // sehr gut!
+$hovered_link_color: #fb3f00;
+
+
 html body {
-    //font-family: 'SangBleuSunrise-Regular';
+    background-color: $background_color;
+    color: $text_color;
+    font-family: 'SangBleuSunrise-Regular';
+    font-size: 16px;
+}
+
+header, footer {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header {    
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#soladis-title {
+    font-family: 'El Messiri', sans-serif;
+    color: $heading_color;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+#soladis-subtitle {
+    //color: #00763b;
+    //color: #02afdc; //sehr schönes blau
+    color: $text_color;
+    opacity: 0.8;
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+    margin-top: -10px;
+}
+
+#header-menu {
+    flex-basis: 50%;
+}
+
+#footer-menu {
+    flex-basis: 30%;
+}
+#header-menu-list, #footer-menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color: $text-color;
+}
+
+#footer-menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-menu-list a {
+    color: $heading-color;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'SangBleuSunrise-Light';
+    font-weight: bold;
+    letter-spacing: 1.0px;
+    padding-bottom: 2px;
+    border-radius: 1.5px;
+    border-bottom: 1.5px $background-color solid;
+}
+
+#header-menu-list a:hover {
+    border-bottom: 1.5px $heading-color solid;
+}
+
+footer {
+    font-size: 14px;
+    font-family: 'SangBleuSunrise-Light';
+    font-weight: normal;
+}
+#footer-menu-list a {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'SangBleuSunrise-Light';
+    font-weight: normal;
+    letter-spacing: 1.0px;
+    padding-bottom: 2px;
+    border-radius: 1.5px;
+    border-bottom: 1.5px $background-color solid;
+}
+
+#footer-menu-list a:hover {
+    border-bottom: 0.8px $text-color solid;
+}
+.single-page {
+    width: 80%;
+    margin: auto;
+}
+
+
+
+h1, h2 {
+    color: $heading_color;
+    font-family: 'SangBleuSunrise-Light';
+    font-weight: normal;
+}
+
+a {
+    color: $link_color;
+}
+
+a:hover {
+    color: $hovered_link_color;
 }

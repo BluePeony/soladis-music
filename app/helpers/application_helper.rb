@@ -8,4 +8,8 @@ module ApplicationHelper
 			return "#{page_title} | #{base_title}"
 		end
 	end
+
+	def current_year
+		return Time.now.year
+	end
 end
