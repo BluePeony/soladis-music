@@ -3,27 +3,31 @@
 <div class="single-page" id="ueber-mich">
 
 	<h2>Über mich</h2>
-	<p>
-		Hallo,<br>
-		mein Name ist Konrad und ich liebe Musik. Das ist Beschriftung.
-	</p>
-	<p>
-		Nicht nur Musik zu hören, sondern auch eigene Musik zu „kreieren/komponieren“, beschäftigt mich schon seit vielen Jahren als Hobby. Eigenen Ideen einen Klang zu geben und etwas mit Musik mehr Ausdruck bzw. emotionale Spannung zu verleihen, ist für mich eine sehr reizvolle Aufgabe. Seit 2015 bin ich auch aktiver dabei, Musik zu schaffen, wie es die Zeit und andere Hobbies eben erlauben.<br>
-		Daraus entstanden verschiedene Musikstücke (und werden auch noch entstehen), die ich und auch andere zur Untermalung von eigenen Videos, Veranstaltungen und Aufführungen verwendet haben.<br>
-		Eine weitere Motivation für eigene Musik war auch die Vielfalt und Unsicherheiten des Musikrechts (verschiedene Verwertungsgesellschaften, Lizenzrecht, Nutzungsbedingungen, Urheberrecht, …).<br>
-		Meine Musik will ich daher jetzt allen zur Verfügung stellen, die sich nicht mit der Einhaltung komplizierter Nutzungsrechte herumschlagen wollen.
-	</p>
+	<div id="ueber-mich-container">
 
-	<p>
-		Für Anregungen, Fragen und auch Wünsche z. B. Anpassung der Musik (Geschwindigkeit, Abtastrate, Melodie, Übermelodie, Instrumentalisierung, …), Auftragswerke, Lizenzbestätigungen, Probleme beim Download, … stehe ich gern zur Verfügung. Einfach mail an soladis-music@gmx.de bzw. über die <%= link_to('Kontaktseite', '/kontakt')%>.
-	</p>
+		<div id="ueber-mich-text">
+			<span>
+				Hallo,<br>
+				mein Name ist Konrad und ich liebe Musik. Das ist Beschriftung.<br><br>
 
-	<p>
-		Viel Spass und Erfolg mit meiner Musik,<br>
-		Konrad
-	</p>
+				Nicht nur Musik zu hören, sondern auch eigene Musik zu „kreieren/komponieren“, beschäftigt mich schon seit vielen Jahren als Hobby. Eigenen Ideen einen Klang zu geben und etwas mit Musik mehr Ausdruck bzw. emotionale Spannung zu verleihen, ist für mich eine sehr reizvolle Aufgabe. Seit 2015 bin ich auch aktiver dabei, Musik zu schaffen, wie es die Zeit und andere Hobbies eben erlauben.<br>
+				Daraus entstanden verschiedene Musikstücke (und werden auch noch entstehen), die ich und auch andere zur Untermalung von eigenen Videos, Veranstaltungen und Aufführungen verwendet haben.<br>
+				Eine weitere Motivation für eigene Musik war auch die Vielfalt und Unsicherheiten des Musikrechts (verschiedene Verwertungsgesellschaften, Lizenzrecht, Nutzungsbedingungen, Urheberrecht, …).<br>
+				Meine Musik will ich daher jetzt allen zur Verfügung stellen, die sich nicht mit der Einhaltung komplizierter Nutzungsrechte herumschlagen wollen.<br><br>
 
-	<p>
-		<%= link_to image_tag("konrad_foerster.jpg", alt: "Konrad Förster", id: "ueber-mich-img"), image_url('konrad_foerster.jpg'), target: :_blank %>
-	</p>
+				Für Anregungen, Fragen und auch Wünsche z. B. Anpassung der Musik (Geschwindigkeit, Abtastrate, Melodie, Übermelodie, Instrumentalisierung, …), Auftragswerke, Lizenzbestätigungen, Probleme beim Download, … stehe ich gern zur Verfügung. Einfach mail an soladis-music@gmx.de bzw. über die <%= link_to('Kontaktseite', '/kontakt')%>.<br><br>
+
+				Viel Spass und Erfolg mit meiner Musik,<br>
+				Konrad
+			</span>
+
+		</div>
+
+		<div id="ueber-mich-img">
+
+			<%= link_to image_tag("konrad_foerster.jpg", alt: "Konrad Förster", id: "ueber-mich-img-img"), image_url('konrad_foerster.jpg'), target: :_blank %>
+		</div>
+
+	</div>
+
 </div>

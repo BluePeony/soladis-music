@@ -123,6 +123,7 @@
 
 //$text_color: #7f5339;
 //$text_color: #772f1a; // sehr gut
+$text_color: #77191a;  //sehr gut - cedon heft
 //$heading_color: #e36414;
 //$link_color: #0f4c5c;
 //$link_color: #335c67;
@@ -136,11 +137,11 @@
 
 $background_color: #f9f9f9;
 $heading_color: #dc2f02;
-$text_color: #802b00; // sehr gut, aber etwas heller und freundlicher
-//$text_color: #8b6969;
+//$text_color: #802b00; // sehr gut, aber etwas heller und freundlicher
+//$text_color: #592720;
 $link_color: #008081; // sehr gut!
+//$link_color: #005651;
 $hovered_link_color: #fb3f00;
-
 
 html body {
     background-color: $background_color;
@@ -149,16 +150,21 @@ html body {
     font-size: 16px;
 }
 
+body {
+    height: 100vh;
+    margin: 0px;
+}
 header, footer {
-    width: 95%;
-    margin: auto;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: space-between;
 }
 
-#header {    
-    margin-top: 20px;
-    margin-bottom: 50px;
+header {    
+    padding-top: 20px;
+    //margin-bottom: 50px;
 }
 
 #soladis-title {
@@ -172,7 +178,7 @@ header, footer {
     //color: #00763b;
     //color: #02afdc; //sehr schönes blau
     color: $text_color;
-    opacity: 0.8;
+    opacity: 0.9;
     font-style: italic;
     text-align: center;
     font-size: 18px;
@@ -189,7 +195,7 @@ header, footer {
 #header-menu-list, #footer-menu-list {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     color: $text-color;
 }
 
@@ -197,6 +203,7 @@ header, footer {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    margin-top: 0px;
 }
 
 #header-menu-list a {
@@ -219,6 +226,8 @@ footer {
     font-size: 14px;
     font-family: 'SangBleuSunrise-Light';
     font-weight: normal;
+    margin-top: 70px;
+
 }
 #footer-menu-list a {
     color: $text-color;
@@ -236,10 +245,31 @@ footer {
     border-bottom: 0.8px $text-color solid;
 }
 .single-page {
-    width: 80%;
+    width: 90%;
     margin: auto;
+    min-height: 69vh;
+    position: relative;
+    top: 40px;
 }
 
+#ueber-mich-container {
+    display: flex;
+}
+
+#ueber-mich-text {
+    width: 70vw;
+    padding-right: 50px;
+}
+
+#ueber-mich-text span {
+    text-align: justify;
+}
+
+#ueber-mich-img-img {
+    width: 25vw;
+    height: auto;
+    border-radius: 5px;
+}
 
 
 h1, h2 {
@@ -253,5 +283,5 @@ a {
 }
 
 a:hover {
-    color: $hovered_link_color;
+    color: $heading_color;
 }
