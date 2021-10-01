@@ -124,6 +124,8 @@
 //$text_color: #7f5339;
 //$text_color: #772f1a; // sehr gut
 $text_color: #77191a;  //sehr gut - cedon heft
+$text_color: #6c6360;
+$text_color: #363230;
 //$heading_color: #e36414;
 //$link_color: #0f4c5c;
 //$link_color: #335c67;
@@ -196,7 +198,7 @@ header {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    color: $text-color;
+    color: $heading-color;
 }
 
 #footer-menu-list {
