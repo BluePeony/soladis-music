@@ -5,12 +5,12 @@
 @font-face {
     font-family: 'SangBleuSunrise-Regular';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuSunrise-Regular-WebTrial.eot');
-    src: url('SangBleuSunrise-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuSunrise-Regular-WebTrial.woff2') format('woff2'),
-         url('SangBleuSunrise-Regular-WebTrial.woff') format('woff'),
-         url('SangBleuSunrise-Regular-WebTrial.ttf') format('truetype'),
-         url('SangBleuSunrise-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuSunrise-Regular-WebTrial.eot');
+    src: font-url('SangBleuSunrise-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuSunrise-Regular-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuSunrise-Regular-WebTrial.woff') format('woff'),
+         font-url('SangBleuSunrise-Regular-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuSunrise-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -18,12 +18,12 @@
 @font-face {
     font-family: 'SangBleuSunrise-Light';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuSunrise-Light-WebTrial.eot');
-    src: url('SangBleuSunrise-Light-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuSunrise-Light-WebTrial.woff2') format('woff2'),
-         url('SangBleuSunrise-Light-WebTrial.woff') format('woff'),
-         url('SangBleuSunrise-Light-WebTrial.ttf') format('truetype'),
-         url('SangBleuSunrise-Light-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuSunrise-Light-WebTrial.eot');
+    src: font-url('SangBleuSunrise-Light-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuSunrise-Light-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuSunrise-Light-WebTrial.woff') format('woff'),
+         font-url('SangBleuSunrise-Light-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuSunrise-Light-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -31,12 +31,12 @@
 @font-face {
     font-family: 'SangBleuSunrise-Livre';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuSunrise-Livre-WebTrial.eot');
-    src: url('SangBleuSunrise-Livre-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuSunrise-Livre-WebTrial.woff2') format('woff2'),
-         url('SangBleuSunrise-Livre-WebTrial.woff') format('woff'),
-         url('SangBleuSunrise-Livre-WebTrial.ttf') format('truetype'),
-         url('SangBleuSunrise-Livre-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuSunrise-Livre-WebTrial.eot');
+    src: font-url('SangBleuSunrise-Livre-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuSunrise-Livre-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuSunrise-Livre-WebTrial.woff') format('woff'),
+         font-url('SangBleuSunrise-Livre-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuSunrise-Livre-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -44,12 +44,12 @@
 @font-face {
     font-family: 'SangBleuSunrise-Medium';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuSunrise-Medium-WebTrial.eot');
-    src: url('SangBleuSunrise-Medium-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuSunrise-Medium-WebTrial.woff2') format('woff2'),
-         url('SangBleuSunrise-Medium-WebTrial.woff') format('woff'),
-         url('SangBleuSunrise-Medium-WebTrial.ttf') format('truetype'),
-         url('SangBleuSunrise-Medium-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuSunrise-Medium-WebTrial.eot');
+    src: font-url('SangBleuSunrise-Medium-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuSunrise-Medium-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuSunrise-Medium-WebTrial.woff') format('woff'),
+         font-url('SangBleuSunrise-Medium-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuSunrise-Medium-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -57,12 +57,12 @@
 @font-face {
     font-family: 'SangBleuSunrise-Bold';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuSunrise-Bold-WebTrial.eot');
-    src: url('SangBleuSunrise-Bold-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuSunrise-Bold-WebTrial.woff2') format('woff2'),
-         url('SangBleuSunrise-Bold-WebTrial.woff') format('woff'),
-         url('SangBleuSunrise-Bold-WebTrial.ttf') format('truetype'),
-         url('SangBleuSunrise-Bold-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuSunrise-Bold-WebTrial.eot');
+    src: font-url('SangBleuSunrise-Bold-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuSunrise-Bold-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuSunrise-Bold-WebTrial.woff') format('woff'),
+         font-url('SangBleuSunrise-Bold-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuSunrise-Bold-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -72,12 +72,12 @@
 @font-face {
     font-family: 'SangBleuEmpire-Regular';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuEmpire-Regular-WebTrial.eot');
-    src: url('SangBleuEmpire-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuEmpire-Regular-WebTrial.woff2') format('woff2'),
-         url('SangBleuEmpire-Regular-WebTrial.woff') format('woff'),
-         url('SangBleuEmpire-Regular-WebTrial.ttf') format('truetype'),
-         url('SangBleuEmpire-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuEmpire-Regular-WebTrial.eot');
+    src: font-url('SangBleuEmpire-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuEmpire-Regular-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuEmpire-Regular-WebTrial.woff') format('woff'),
+         font-url('SangBleuEmpire-Regular-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuEmpire-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -85,12 +85,12 @@
 @font-face {
     font-family: 'SangBleuKingdom-Regular';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuKingdom-Regular-WebTrial.eot');
-    src: url('SangBleuKingdom-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuKingdom-Regular-WebTrial.woff2') format('woff2'),
-         url('SangBleuKingdom-Regular-WebTrial.woff') format('woff'),
-         url('SangBleuKingdom-Regular-WebTrial.ttf') format('truetype'),
-         url('SangBleuKingdom-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuKingdom-Regular-WebTrial.eot');
+    src: font-url('SangBleuKingdom-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuKingdom-Regular-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuKingdom-Regular-WebTrial.woff') format('woff'),
+         font-url('SangBleuKingdom-Regular-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuKingdom-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -98,12 +98,12 @@
 @font-face {
     font-family: 'SangBleuRepublic-Regular';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuRepublic-Regular-WebTrial.eot');
-    src: url('SangBleuRepublic-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuRepublic-Regular-WebTrial.woff2') format('woff2'),
-         url('SangBleuRepublic-Regular-WebTrial.woff') format('woff'),
-         url('SangBleuRepublic-Regular-WebTrial.ttf') format('truetype'),
-         url('SangBleuRepublic-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuRepublic-Regular-WebTrial.eot');
+    src: font-url('SangBleuRepublic-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuRepublic-Regular-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuRepublic-Regular-WebTrial.woff') format('woff'),
+         font-url('SangBleuRepublic-Regular-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuRepublic-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -111,12 +111,12 @@
 @font-face {
     font-family: 'SangBleuVersailles-Regular';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: url('SangBleuVersailles-Regular-WebTrial.eot');
-    src: url('SangBleuVersailles-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         url('SangBleuVersailles-Regular-WebTrial.woff2') format('woff2'),
-         url('SangBleuVersailles-Regular-WebTrial.woff') format('woff'),
-         url('SangBleuVersailles-Regular-WebTrial.ttf') format('truetype'),
-         url('SangBleuVersailles-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuVersailles-Regular-WebTrial.eot');
+    src: font-url('SangBleuVersailles-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuVersailles-Regular-WebTrial.woff2') format('woff2'),
+         font-url('SangBleuVersailles-Regular-WebTrial.woff') format('woff'),
+         font-url('SangBleuVersailles-Regular-WebTrial.ttf') format('truetype'),
+         font-url('SangBleuVersailles-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
     font-weight: normal;
     font-style: normal;
 }
