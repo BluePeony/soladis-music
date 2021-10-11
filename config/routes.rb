@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/in-kuerze', to:  'static_pages#in_kuerze'
+  get '/in-kuerze', to:  'static_pages#in_kuerze' #test 
   get '/ueber-mich', to: 'static_pages#ueber_mich'
   get '/impressum', to: 'static_pages#impressum'
   get '/datenschutz', to: 'static_pages#datenschutz'
