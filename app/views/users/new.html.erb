@@ -2,5 +2,23 @@
 
 <div class="single-page" id="signup">
 	<h2>Registrieren</h2>
-	<p>Hier werden sich User registrieren können.</p>
+	<div id="signup-form">
+		<%= form_with(model: @user, local: true) do |f| %>
+			<%= render 'shared/error_messages'%>
+			
+			<%= f.label :name %>
+      <%= f.text_field :name, class: 'test-form' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'test-form' %>
+
+      <%= f.label :password, "Passwort" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Passwort bestätigen" %>
+      <%= f.password_field :password_confirmation %>
+
+			<%= f.submit "Registrieren" %>
+		<% end %>
+	</div>
 </div>

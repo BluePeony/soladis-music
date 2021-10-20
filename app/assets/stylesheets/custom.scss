@@ -139,6 +139,9 @@ $text_color: #363230;
 
 $background_color: #f9f9f9;
 $heading_color: #dc2f02;
+$register_color: #388e3c;
+//$button_hover_color: #3fa044;
+$button_hover_color: #317c34;
 //$text_color: #802b00; // sehr gut, aber etwas heller und freundlicher
 //$text_color: #592720;
 $link_color: #008081; // sehr gut!
@@ -302,4 +305,84 @@ a:hover {
     width: 100%;
     margin-top: 0px;
     @include box-sizing;
+}
+
+/*signup-form*/
+
+#signup-form form {
+    width: 30%;
+    margin: auto;
+    
+}
+
+#signup-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 30px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    font-family: 'SangBleuSunrise-Regular';
+    font-size: 15px;
+}
+
+#signup-form input:focus {
+    outline: 1px solid #ccc;
+}
+
+#signup-form input[type=submit]{
+    background: $register_color;
+    color: white;
+}
+
+#signup-form input[type=submit]:hover {
+    background: $button_hover_color;
+    color: white;
+    cursor: pointer;
+}
+
+/* errors */
+#error_explanation {
+    color: red;
+    ul li{
+        margin-bottom: 10px;
+    }
+}
+
+.field_with_errors input{
+    outline: 1px solid red;
+    border-radius: 4px;
+}
+
+/* Flash messages */
+.alert {
+    width: 85%;
+    margin: 30px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+}
+.alert-success {
+    background-color: #dff0d8;
+    color: #28a745;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #dc3545;
+    //color: #721c24;
+}
+
+.alert-info {
+    background-color: #cce5ff;
+    //color: #17a2b8;
+    color: #004085;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
 }
