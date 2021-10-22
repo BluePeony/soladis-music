@@ -1,0 +1,26 @@
+<% provide(:title, 'Log in')%>
+
+<div class="single-page" id="login">
+
+	<h2>Log in</h2>
+
+	<div class="soladis-form">
+		<%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.submit "Anmelden" %>
+		<% end %>
+
+		<p>
+			Noch kein Konto?
+			<%= link_to("Registrieren", signup_path)%>
+		</p>
+	</div>
+
+	
+	
+</div>

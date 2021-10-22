@@ -307,15 +307,20 @@ a:hover {
     @include box-sizing;
 }
 
-/*signup-form*/
+/*signup-form and login-form*/
 
-#signup-form form {
+.soladis-form form, .soladis-form p {
     width: 30%;
     margin: auto;
     
 }
 
-#signup-form input {
+#login h2, #signup h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.soladis-form input {
     display: block;
     width: 100%;
     margin-bottom: 30px;
@@ -326,16 +331,16 @@ a:hover {
     font-size: 15px;
 }
 
-#signup-form input:focus {
+.soladis-form input:focus {
     outline: 1px solid #ccc;
 }
 
-#signup-form input[type=submit]{
+.soladis-form input[type=submit]{
     background: $register_color;
     color: white;
 }
 
-#signup-form input[type=submit]:hover {
+.soladis-form input[type=submit]:hover {
     background: $button_hover_color;
     color: white;
     cursor: pointer;

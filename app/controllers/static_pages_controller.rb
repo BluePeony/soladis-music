@@ -13,4 +13,7 @@ class StaticPagesController < ApplicationController
 
   def kontakt
   end
+
+  def videos
+  end
 end
