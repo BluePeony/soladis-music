@@ -29,6 +29,29 @@
 			<li>
 				<%= link_to('Kontakt', kontakt_path) %>
 			</li>
+			<% if logged_in? %>
+				<li id="meins-list-item">
+					<%= link_to '#' do %>
+						Meins <i class="fas fa-caret-down"></i>
+					<% end %>
+					<ul id="user-menu-list">
+						<li class="user-menu-item">
+							<%= link_to('Mein Profil', current_user) %>
+						</li>
+						<li class="user-menu-item">
+							<%= link_to('Neue Musik', '#')%>
+						</li>
+						<li class="user-menu-item">
+							<%= link_to('Neues Video', '#')%>
+						</li>
+						<li id="divider-item"><hr></li>
+						<li class="user-menu-item", id="logout-item">
+							<%= link_to('Ausloggen', logout_path, method: :delete)%>
+						</li>
+					</ul>	
+				</li>
+					
+			<% end %>
 		</ul>
 	</nav>
 </header>
