@@ -392,6 +392,30 @@ a:hover {
     cursor: pointer;
 }
 
+#login-password {
+    margin-bottom: 3px;
+}
+
+#remember-checkbox {
+    display: flex;
+}
+
+#remember-checkbox input {
+    width: 15px;
+    margin-left: 0px;
+}
+
+#remember-checkbox input:focus {
+    outline: 0;
+}
+
+#remember-checkbox span {
+    font-size: 15px;
+    width: 200px;
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
 /* errors */
 #error_explanation {
     color: red;
