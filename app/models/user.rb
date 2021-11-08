@@ -22,6 +22,20 @@ class User < ApplicationRecord
 		remember_digest || remember
 	end
 
+	# Returns true if the user is authenticated - if the remember token corresponds to the remember digest
+	def authenticated?(remember_token)
+		if remember_digest
+			BCrypt::Password.new(remember_digest).is_password?(remember_token)
+		else
+			return false
+		end
+	end
+
+		# Forgets a user
+	def forget
+		update_attribute(:remember_digest, nil)
+	end
+
 	# Returns the hash digest of the given string
 	def User.digest(string)
 		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
@@ -33,17 +47,5 @@ class User < ApplicationRecord
 		SecureRandom.urlsafe_base64
 	end
 
-	# Returns true if the user is authenticated - if the remember token corresponds to the remember digest
-	def authenticated?(remember_token)
-		if remember_digest
-			BCrypt::Password.new(remember_digest).is_password?(remember_token)
-		else
-			return false
-		end
-	end
-
-	# Forgets a user
-	def forget
-		update_attribute(:remember_digest, nil)
-	end
+	
 end

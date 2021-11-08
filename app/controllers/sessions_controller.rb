@@ -1,13 +1,19 @@
 class SessionsController < ApplicationController
   def new
+    if logged_in?
+      flash[:info] = "Du bist schon eingeloggt."
+      redirect_to current_user
+    else
+      render 'new'
+    end
   end
 
   def create
   	user = User.find_by(email: params[:session][:email].downcase)
   	if user&.authenticate(params[:session][:password])
   		reset_session
-  		log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+  		log_in user
   		redirect_to user
 		else
 			if !user
