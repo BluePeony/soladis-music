@@ -323,7 +323,7 @@ footer {
 }
 
 
-h1, h2 {
+h1, h2, h3 {
     color: $heading_color;
     font-family: 'SangBleuSunrise-Light';
     font-weight: normal;
@@ -361,7 +361,7 @@ a:hover {
     
 }
 
-#login h2, #signup h2 {
+#login h2, #signup h2, #update-profile-page h2 {
     text-align: center;
     margin-bottom: 50px;
 }
@@ -461,3 +461,27 @@ a:hover {
     background-color: #fff3cd;
     color: #856404;
 }
+
+#all-users-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#all-users-list li {
+    margin-bottom: 15px;
+}
+
+span#user-name-index {
+    width: 200px;
+    display: inline-block;
+}
+
+.pagination {
+    margin-top: 50px;
+}
+
+.pagination .current, .pagination a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+

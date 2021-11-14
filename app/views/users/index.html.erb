@@ -1,0 +1,13 @@
+<% provide(:title, 'Alle User' )%>
+
+<div class="single-page", id="index-page">
+	<h2>Alle User</h2>
+
+	<div id="show-all-users">
+		<ul id="all-users-list">
+			<%= render @users %>
+		</ul>
+	</div>
+	
+	<%= will_paginate %>
+</div>

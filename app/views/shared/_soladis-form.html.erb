@@ -1,0 +1,21 @@
+<div class="soladis-form">
+	<%= form_with(model: @user, local: true) do |f| %>
+		<%= render 'shared/error_messages'%>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :email %>
+		<%= f.email_field :email %>
+
+		<%= f.label :password, 'Passwort' %>
+		<%= f.password_field :password %>
+
+		<%= f.label :password_confirmation, 'Passwort bestätigen' %>
+		<%= f.password_field :password_confirmation %>
+
+		<%= f.submit yield(:button_text) %>
+
+	<% end %>
+		
+</div>

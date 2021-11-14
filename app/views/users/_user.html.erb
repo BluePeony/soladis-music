@@ -1,0 +1,9 @@
+<li>
+	<span id="user-name-index"><%= user.name %></span> 
+	<span id="user-email-index">(<a href="mailto:<%= user.email %>"><%= user.email %></a>)</span>
+	<% if current_user.admin? && !current_user?(user) %>
+		<span>
+			| <%= link_to " Account löschen", user, method: :delete, data: { confirm: "Willst Du Deinen Account wirklich löschen?" } %>
+		</span>
+	<% end %>
+</li>

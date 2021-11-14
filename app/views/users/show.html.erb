@@ -7,5 +7,13 @@
 	<p>
 		<%= @user.email %>
 	</p>
+
+	<div id="my-actions">
+		<h3>Meine Aktionen</h3>
+		<p>
+			<%= link_to "Profil aktualisieren", edit_user_path(current_user) %>
+		</p>
+	</div>
+	
 	
 </div>
