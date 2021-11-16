@@ -12,7 +12,7 @@
 			<%= f.label :password%>
 			<%= f.password_field :password, id: 'login-password' %>
 
-			<%= f.label :remember_me, id: 'remember-checkbox' do %>
+			<%= f.label :remember_me, class: 'user-checkbox' do %>
 				<%= f.check_box :remember_me %>
 				<span>angemeldet bleiben</span>
 			<% end %>

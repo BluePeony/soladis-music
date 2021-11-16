@@ -14,6 +14,15 @@
 		<%= f.label :password_confirmation, 'Passwort bestätigen' %>
 		<%= f.password_field :password_confirmation %>
 
+		<% if request.path[-5..-1] == "/edit" %>
+			<% if current_user.superadmin? %>
+				<%= f.label :admin, class: 'user-checkbox' do %>
+					<%= f.check_box :admin %>
+					<span>Admin</span>
+				<% end %>
+			<% end %>
+		<% end%>
+
 		<%= f.submit yield(:button_text) %>
 
 	<% end %>

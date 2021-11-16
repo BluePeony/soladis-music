@@ -1,9 +1,12 @@
 <li>
-	<span id="user-name-index"><%= user.name %></span> 
-	<span id="user-email-index">(<a href="mailto:<%= user.email %>"><%= user.email %></a>)</span>
-	<% if current_user.admin? && !current_user?(user) %>
+	<span id="user-name-index"><%= link_to user.name, user %></span> 
+	<% if current_user.superadmin? || current_user.admin? || current_user?(user) %>
+		<%= link_to "User bearbeiten", edit_user_url(user), class: "user-edit-button" %>
+	<% end %>
+	<% if (current_user.admin? || current_user.superadmin?) && !current_user?(user) %>
 		<span>
-			| <%= link_to " Account löschen", user, method: :delete, data: { confirm: "Willst Du Deinen Account wirklich löschen?" } %>
+			<%= link_to " Account löschen", user, method: :delete, data: { confirm: "Willst Du den User Account wirklich löschen?" }, class: "user-edit-button" %>
 		</span>
 	<% end %>
+	
 </li>

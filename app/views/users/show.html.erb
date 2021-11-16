@@ -8,10 +8,22 @@
 		<%= @user.email %>
 	</p>
 
+	<% if @user.admin? || @user.superadmin? %>
+		<h3>Meine Rollen</h3>
+		<p>
+			<% if @user.admin %>
+				Admin<br>
+			<% end %>
+			<% if @user.superadmin? %>
+				Superadmin
+			<% end %>
+		</p>
+	<% end %>
+
 	<div id="my-actions">
 		<h3>Meine Aktionen</h3>
 		<p>
-			<%= link_to "Profil aktualisieren", edit_user_path(current_user) %>
+			<%= link_to "Profil aktualisieren", edit_user_path(@user) %>
 		</p>
 	</div>
 	
