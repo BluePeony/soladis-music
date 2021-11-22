@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def update
   	#@user = User.find_by(id: params[:id])
   	# Wenn admin-Attribut nicht verändert werden soll oder wenn der User Superadmin ist
-  	if (@user.admin == user_params[:admin]) || (current_user.superadmin?)
+  	if (@user.admin == user_params[:admin]) || (admin_user)
   		if @user.update(user_params)
 	  		flash[:success] = "Dein Profil wurde erfolgreich aktualisiert."
 	  		redirect_to @user
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
   	# Confirms the correct user
   	def correct_user
   		@user = User.find(params[:id])
-  		if !current_user.superadmin? && !current_user?(@user)
+  		if !admin_user && !current_user?(@user)
 				flash[:danger] = "Du hast keine Berechtigung, auf die Profile anderer User zuzugreifen."
 				redirect_to root_url
   		end
@@ -80,6 +80,13 @@ class UsersController < ApplicationController
 
   	# Confirms that the user is admin
   	def admin_user
-  		redirect_to(root_url) unless (current_user.admin? || current_user.superadmin?)
+  		is_admin = false
+  		if (current_user.admin? || current_user.superadmin?)
+  			is_admin = true
+  		else
+  			redirect_to(root_url)
+  			is_admin = false
+  		end
+  		return is_admin
   	end
 end
