@@ -1,0 +1,5 @@
+Hallo <%= @user.name %>,
+
+willkommen bei Soladis-Music! Um Deinen Account zu aktivieren, klicke bitte auf diesen Link: 
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

@@ -8,16 +8,20 @@ class UsersController < ApplicationController
   end
 
   def show
-  	#@user = User.find(params[:id])
+  	@user = User.find(params[:id])
+  	redirect_to root_url and return unless @user.activated?
   end
 
   def create
   	@user = User.new(user_params)
   	if @user.save
-      reset_session
-      log_in @user
-  		flash[:success] = "Welcome to Soladis-Music!"
-  		redirect_to @user
+  		@user.send_activation_email 
+  		flash[:info] = "Wir haben Dir eine E-Mail zur Aktivierung Deines Accounts geschickt."
+  		redirect_to root_url
+      #reset_session
+      #log_in @user
+  		#flash[:success] = "Welcome to Soladis-Music!"
+  		#redirect_to @user
   	else
   		render 'new'
   	end
@@ -43,7 +47,7 @@ class UsersController < ApplicationController
   end
 
   def index
-  	@users = User.paginate(page: params[:page])
+  	@users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def destroy

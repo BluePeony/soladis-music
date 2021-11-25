@@ -1,0 +1,6 @@
+<h1>Soladis-Music</h1>
+<p>Hallo, <%= @user.name %>,</p>
+
+<p>willkommen bei Soladis-Music. Um Deinen Account zu aktivieren, klicke bitte auf diesen Link:</p>
+
+<%= link_to "Account aktivieren", edit_account_activation_url(@user.activation_token, email:@user.email) %>
