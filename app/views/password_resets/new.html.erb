@@ -1,0 +1,18 @@
+<% provide(:title, 'Passwort vergessen')%>
+
+<div class="single-page" id="password-reset">
+
+	<h2>Passwort vergessen</h2>
+
+	<div class="soladis-form">
+		<%= form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+
+			<%= f.submit "Passwort zurücksetzen" %>
+		<% end %>
+	</div>
+
+	
+	
+</div>

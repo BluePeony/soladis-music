@@ -10,6 +10,7 @@
 			<%= f.email_field :email %>
 
 			<%= f.label :password%>
+			<span><%= link_to "Passwort vergessen?", new_password_reset_path, id: "password-reset-link" %></span>
 			<%= f.password_field :password, id: 'login-password' %>
 
 			<%= f.label :remember_me, class: 'user-checkbox' do %>

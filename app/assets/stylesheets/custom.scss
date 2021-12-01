@@ -358,10 +358,11 @@ a:hover {
 .soladis-form form, .soladis-form p {
     width: 30%;
     margin: auto;
+    position: relative;
     
 }
 
-#login h2, #signup h2, #update-profile-page h2 {
+#login h2, #signup h2, #update-profile-page h2, #password-reset h2, #password-reset-page h2 {
     text-align: center;
     margin-bottom: 50px;
 }
@@ -394,6 +395,12 @@ a:hover {
 
 #login-password {
     margin-bottom: 3px;
+}
+
+#password-reset-link {
+    font-size: 14px;
+    position: absolute;
+    right: 0;
 }
 
 .user-checkbox {
