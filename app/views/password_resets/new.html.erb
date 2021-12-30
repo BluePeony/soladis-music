@@ -6,6 +6,7 @@
 
 	<div class="soladis-form">
 		<%= form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
+
 			<%= f.label :email %>
 			<%= f.email_field :email %>
 

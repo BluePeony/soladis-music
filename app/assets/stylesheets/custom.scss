@@ -139,14 +139,19 @@ $text_color: #363230;
 
 $background_color: #f9f9f9;
 $heading_color: #dc2f02;
-$register_color: #388e3c;
+//$register_color: #388e3c;
+$register_color: #00999b;
 //$button_hover_color: #3fa044;
-$button_hover_color: #317c34;
+//$button_hover_color: #317c34;
+$button_hover_color: #00898b;
 //$text_color: #802b00; // sehr gut, aber etwas heller und freundlicher
 //$text_color: #592720;
-$link_color: #008081; // sehr gut!
+//$link_color: #008081; // sehr gut!
+$link_color: #00999b;
 //$link_color: #005651;
 $hovered_link_color: #fb3f00;
+$delete_button_color: $heading_color;
+$delete_button_hover_color: #c62a01;
 
 html body {
     background-color: $background_color;
@@ -353,6 +358,7 @@ a:hover {
     @include box-sizing;
 }
 
+
 /*signup-form and login-form*/
 
 .soladis-form form, .soladis-form p {
@@ -362,12 +368,17 @@ a:hover {
     
 }
 
+/* new track form*/
+#track-form form, #track-edit-form form {
+    margin-left: 0px;
+}
+
 #login h2, #signup h2, #update-profile-page h2, #password-reset h2, #password-reset-page h2 {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.soladis-form input {
+.soladis-form input, .soladis-form textarea {
     display: block;
     width: 100%;
     margin-bottom: 30px;
@@ -378,11 +389,20 @@ a:hover {
     font-size: 15px;
 }
 
-.soladis-form input:focus {
+.soladis-form input[type=file] {
+    border: none;
+    padding-top: 7px;
+}
+
+.soladis-form textarea {
+    height: 100px;
+}
+
+.soladis-form input:focus, .soladis-form textarea:focus {
     outline: 1px solid #ccc;
 }
 
-.soladis-form input[type=submit]{
+.soladis-form input[type=submit] {
     background: $register_color;
     color: white;
 }
@@ -428,7 +448,7 @@ a:hover {
 }
 
 /* errors */
-#error_explanation {
+#error_explanation, #error-explanation {
     color: red;
     ul li{
         margin-bottom: 10px;
@@ -514,16 +534,216 @@ span#user-name-index {
 
 .user-edit-button {
     border: 1px solid #d3d3d3;
-    background-color: #e4e4e4;
+    //background-color: #e4e4e4;
+    background-color: #00999b;
     border-radius: 4px;
     padding: 3px 10px;
     margin-right: 20px;
-    color: $text_color;
+    //color: $text_color;
+    color: white;
     text-decoration: none;
 }
 
 .user-edit-button:hover {
-    background-color: #d7d7d7;
-    color: $text_color;
+    //background-color: #d7d7d7;
+    background-color: #00898b;
+    //color: $text_color;
+    color: white;
 
+}
+
+/* Tracks Styling */
+
+.h2-fa-icon {
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+#show-track-page-unpublished {
+    background-color: beige;
+}
+
+#edit-track-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+#edit-track-links > input, #edit-track-links > a {
+    width: 35%;
+    margin-bottom: 0px;
+}
+
+#edit-track-links a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    padding-top: 1px;
+    background: $delete_button_color;
+    color: white;
+}
+
+#edit-track-links a:hover {
+    background: $delete_button_hover_color;
+}
+
+.all-tracks-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.single-track-item {
+    display: inline-block;
+    width: 200px;
+}
+
+#track-delete-button {
+    background-color: $delete_button_color;
+}
+
+#track-delete-button:hover {
+    background-color: $delete_button_hover_color;
+}
+
+#h2-fa-icon-create-track {
+    font-size: 20px;
+}
+
+.all-tracks-list li {
+    margin-bottom: 30px;
+}
+
+.published-status-index {
+    display: inline-block;
+    width: 100px;
+}
+
+.user-checkbox span {
+    margin-top: 2px;
+}
+
+#track-filter {
+    display: flex;
+    margin-bottom: 45px;
+    align-items: center;
+    height: 31px;
+}
+
+#track-filter form {
+    margin-left: 20px;
+}
+
+#track-filter form span {
+    display: inline-block;
+    width: 75px;
+}
+
+#track-filter form input[type="submit"] {
+    font-family: 'SangBleuSunrise-Regular';
+    font-size: 16px;
+    color: white;
+    background-color: $register_color;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 3px 10px;
+}
+
+#track-filter form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: $button_hover_color;
+}
+
+.index-table {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+  grid-gap: 2px;
+  overflow: hidden;
+
+  width: 50%;
+}
+
+.index-heading {
+    height: 50px;
+    line-height: 50px;
+    color: $heading-color;
+    font-family: 'SangBleuSunrise-Light';
+    font-size: 18px;
+
+}
+
+.index-aktionen {
+    text-align: center;
+}
+
+.index-row-wrapper {
+    display: contents;
+}
+
+.index-row-wrapper:hover > div {
+    background-color: darken(white, 8%);
+}
+
+.index-row {
+    height: 40px;
+    line-height: 40px;
+}
+
+.index-row-title {
+    padding-left: 5px;
+}
+
+//Users Profile page
+#my-dashboard-flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#my-roles-and-actions {
+    width: 50%;
+}
+
+#my-tracks {
+    width: 50%;
+}
+
+#my-tracks .index-table {
+    width: 100%;
+}
+
+
+// Track Show page
+#track-show-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#track-show-image {
+    width: 50%;
+}
+
+#track-show-image img {
+    border-radius: 4px;
+}
+
+#track-show-attributes {
+    width: 45%;
+    position: relative;
+}
+
+#track-show-attributes p {
+    margin-top: 0px;
+    position: relative;
+}
+
+//Track Edit page
+#track-image-edit img {
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

@@ -8,24 +8,49 @@
 		<%= @user.email %>
 	</p>
 
-	<% if @user.admin? || @user.superadmin? %>
-		<h3>Meine Rollen</h3>
-		<p>
-			<% if @user.admin %>
-				Admin<br>
-			<% end %>
-			<% if @user.superadmin? %>
-				Superadmin
-			<% end %>
-		</p>
-	<% end %>
+	<div id="my-dashboard-flexbox">
+		
+		<div id="my-roles-and-actions">
+			<div id="my-roles">
+				<h3>Meine Rollen</h3>
+				<p>
+					<% if !@user.admin? && !@user.superadmin? %>
+						Keine Rollen<br>
+					<% else %>	
+						<% if @user.admin? %>
+							Admin<br>
+						<% end %>
+						<% if @user.superadmin? %>
+							Superadmin<br>
+						<% end %>
+					<% end %>	
+				</p>
+			</div>
 
-	<div id="my-actions">
-		<h3>Meine Aktionen</h3>
-		<p>
-			<%= link_to "Profil aktualisieren", edit_user_path(@user) %>
-		</p>
+			<div id="my-actions">
+				<h3>Meine Aktionen</h3>
+				<p>
+					<%= link_to "Profil aktualisieren", edit_user_path(@user), class: 'user-edit-button' %>
+					<%= link_to "Neue Musik erstellen", new_track_path, class: 'user-edit-button' %>
+				</p>
+			</div>
+		</div>
+
+		<div id="my-tracks">
+			<h3>Meine Tracks</h3>
+			<div>
+				<p>Anzahl der Tracks: <%= @tracks.count %> </p>
+			</div>
+			<div class="index-table">
+				<div class="index-heading">Titel</div>
+				<div class="index-heading">Status</div>
+				<div class="index-heading">Erstellt von</div>
+				<div class="index-heading index-aktionen" id="index-heading-aktionen">Aktionen</div>
+
+				<%= render @tracks %>
+				<%= will_paginate @tracks %>
+			</div>
+		</div>
 	</div>
-	
 	
 </div>

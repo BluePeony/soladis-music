@@ -1,0 +1,24 @@
+<div class="index-row-wrapper">
+	<div class="index-row index-row-title"><%= link_to track.title, track %></div>
+	<% if track.published_status %>
+		<div class="index-row">Online</div>
+	<% else %>
+		<div class="index-row">Entwurf</div>
+	<% end %>
+	<% user = User.find_by(id: track.user_id) %>
+	<div class="index-row">
+		<% if request.get? && request.path == "/tracks" %>
+			<%= link_to user.name, user %>
+		<% elsif request.get? && request.path == "/users/#{params[:id]}" %>
+			<%= user.name %>
+		<% end %>
+	</div>
+	<div class="index-row index-aktionen">
+		<% if (track.user_id == @user.id) || @user.admin? || @user.superadmin? %>
+			<span><%= link_to "Bearbeiten", edit_track_path(track), class: 'user-edit-button'%></span>
+			<span><%= link_to "Löschen", track_path(track), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
+		<% else %>
+			<span>--</span>
+		<% end %>
+	</div>
+</div>

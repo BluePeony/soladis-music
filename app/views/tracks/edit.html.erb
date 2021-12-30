@@ -1,0 +1,9 @@
+<% provide(:title, @track.title )%>
+<% provide(:button_text, "Speichern") %>
+
+<div class="single-page" id="edit-track-page">
+
+	<h2>Bearbeiten von <%= @track.title %></h2>
+	<%= render 'shared/track_form' %>
+	
+</div>

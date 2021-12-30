@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'tracks/new'
+  get 'tracks/create'
+  get 'tracks/edit'
+  get 'tracks/update'
+  get 'tracks/show'
+  get 'tracks/index'
+  get 'tracks/destroy'
   get 'password_resets/new'
   get 'password_resets/edit'
 	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -19,5 +26,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
+
+  resources :tracks
 
 end

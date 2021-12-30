@@ -1,15 +1,10 @@
 class UsersController < ApplicationController
 	before_action :logged_in_user, only: [:edit, :update, :show, :index, :destroy]
-	before_action :correct_user, only: [:edit, :update, :show]
-	before_action :admin_user, only: :destroy
+	before_action :correct_user, only: [:show, :edit, :update]
+  before_action :admin_user?, only: [:destroy]
 
   def new
   	@user = User.new
-  end
-
-  def show
-  	@user = User.find(params[:id])
-  	redirect_to root_url and return unless @user.activated?
   end
 
   def create
@@ -27,23 +22,23 @@ class UsersController < ApplicationController
   	end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @tracks = @user.tracks.paginate(page: params[:page])
+    redirect_to root_url and return unless @user.activated?
+  end
+
   def edit
-  	#@user = User.find_by(id: params[:id])
-  	puts "#{request.original_url}"
-  	puts "#{request.path}"
+  	@user = User.find_by(id: params[:id])
   end
 
   def update
-  	#@user = User.find_by(id: params[:id])
-  	# Wenn admin-Attribut nicht verändert werden soll oder wenn der User Superadmin ist
-  	if (@user.admin == user_params[:admin]) || (admin_user)
-  		if @user.update(user_params)
-	  		flash[:success] = "Dein Profil wurde erfolgreich aktualisiert."
-	  		redirect_to @user
-	  	else
-	  		render 'edit'
-	  	end
-  	end  	
+    if @user.update(user_params)
+      flash[:success] = "Dein Profil wurde erfolgreich aktualisiert."
+      redirect_to @user
+    else
+      render 'edit'
+    end  	
   end
 
   def index
@@ -51,9 +46,22 @@ class UsersController < ApplicationController
   end
 
   def destroy
-  	User.find(params[:id]).destroy 
-  	flash[:success] = "User wurde gelöscht"
-  	redirect_to users_url
+    user = User.find(params[:id])
+    if user.id != 1
+      if user.tracks.size != 0
+        user.tracks.each do |track|
+          track.user_id = 1
+          track.save
+        end
+      end
+      user.destroy
+      flash[:success] = "User wurde gelöscht"
+      redirect_back(fallback_location: root_url)
+    else
+      flash[:danger] = "User ist Superadmin. Superadmin darf nicht gelöscht werden."
+      redirect_to user_url
+    end 
+  	
   end
 
   private
@@ -64,31 +72,24 @@ class UsersController < ApplicationController
 
   	# Before filter
 
-  	# Confirms a logged-in user.
-  	def logged_in_user
-  		unless logged_in?
-  			store_location
-  			flash[:danger] = "Bitte logge Dich ein!"
-  			redirect_to login_url
-  		end
-  	end
-
   	# Confirms the correct user
   	def correct_user
   		@user = User.find(params[:id])
-  		if !admin_user && !current_user?(@user)
-				flash[:danger] = "Du hast keine Berechtigung, auf die Profile anderer User zuzugreifen."
-				redirect_to root_url
-  		end
+      if current_user == @user || admin_user?
+        return true
+      else
+        flash[:danger] = "Du hast keine Berechtigung für diese Seite. Weiterleitung zur Homepage"
+        redirect_to root_url
+      end
+      #return false unless (current_user == @user || admin_user?)
   	end
 
   	# Confirms that the user is admin
-  	def admin_user
+  	def admin_user?
   		is_admin = false
   		if (current_user.admin? || current_user.superadmin?)
   			is_admin = true
   		else
-  			redirect_to(root_url)
   			is_admin = false
   		end
   		return is_admin

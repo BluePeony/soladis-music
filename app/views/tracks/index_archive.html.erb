@@ -1,0 +1,65 @@
+		
+		<% @tracks.each do |t| %>
+			<div class="index-row-wrapper">
+
+				<% if (params[:published] == '1') || ((params[:published] == '0') && (params[:unpublished] == '0')) || (!params[:published] && !params[:unpublished]) %>
+					<% if t.published_status %>
+						<div class="index-row index-row-title"><%= link_to t.title, t %></div>
+						<div class="index-row">Online</div>
+						<div class="index-row index-aktionen">
+							<span><%= link_to "Bearbeiten", edit_track_path(t), class: 'user-edit-button'%></span>
+							<span><%= link_to "Löschen", track_path(t), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
+						</div>
+					<% end %>
+				<% end %>
+
+				<% if (params[:unpublished] == '1') || ((params[:published] == '0') && (params[:unpublished] == '0')) || (!params[:published] && !params[:unpublished]) %>
+					<% if !t.published_status %>
+						<div class="index-row index-row-title"><%= link_to t.title, t %></div>
+						<div class="index-row">Entwurf</div>
+						<div class="index-row index-aktionen">
+							<span><%= link_to "Bearbeiten", edit_track_path(t), class: 'user-edit-button'%></span>
+							<span><%= link_to "Löschen", track_path(t), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+
+
+
+
+
+
+
+		<% @tracks.each do |t| %>
+			<div class="index-row-wrapper">
+
+				<% if (!params[:published] && !params[:unpublished]) || (params[:published] == params[:unpublished]) %>
+					<div class="index-row index-row-title"><%= link_to t.title, t %></div>
+					<% if t.published_status %>
+						<div class="index-row">Online</div>
+					<% else %>
+						<div class="index-row">Entwurf</div>
+					<% end %>
+					<div class="index-row index-aktionen">
+						<span><%= link_to "Bearbeiten", edit_track_path(t), class: 'user-edit-button'%></span>
+						<span><%= link_to "Löschen", track_path(t), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
+					</div>
+				<% elsif (params[:published] == '1') && (params[:unpublished] == '0') %>
+					<div class="index-row index-row-title"><%= link_to t.title, t %></div>
+					<div class="index-row">Online</div>
+					<div class="index-row index-aktionen">
+						<span><%= link_to "Bearbeiten", edit_track_path(t), class: 'user-edit-button'%></span>
+						<span><%= link_to "Löschen", track_path(t), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
+					</div>
+				<% elsif (params[:published] == '0') && (params[:unpublished] == '1') %>
+					<div class="index-row index-row-title"><%= link_to t.title, t %></div>
+					<div class="index-row">Entwurf</div>
+					<div class="index-row index-aktionen">
+						<span><%= link_to "Bearbeiten", edit_track_path(t), class: 'user-edit-button'%></span>
+						<span><%= link_to "Löschen", track_path(t), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
+					</div>
+				<% end %>
+			</div>
+		<% end %>

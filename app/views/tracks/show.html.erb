@@ -1,0 +1,37 @@
+<% provide :title, @track.title %>
+
+<% if @track.published_status %>
+<div class="single-page", id="show-track-page-published">
+<% else %>
+<div class="single-page", id="show-track-page-unpublished">
+<% end %>
+	
+	<h2>
+		<%= @track.title %>
+		<% if ((@track.user_id == @user.id) || super_admin_user?(@user)) %>
+			<%= link_to (fa_icon "pen"), edit_track_path(@track), class: "h2-fa-icon", alt: "Bearbeiten", title: "Bearbeiten" %>
+			<%= link_to (fa_icon "trash-alt"), track_path(@track), method: :delete, data: { confirm: "Willst Du den Track wirklich löschen?" }, class: "h2-fa-icon", alt: "Löschen", title: "Löschen" %>	
+		<% end %>
+	</h2>
+
+	<div id="track-show-div">
+		<div id="track-show-image">
+			<% if @track.image.attached? %>
+				<%= image_tag @track.display_image, title: "#{@track.image.filename}", alt: "#{@track.image.filename}" %>
+			<% end %>
+		</div>
+
+		<div id="track-show-attributes">
+			<% if @track.description.length > 0 %>
+				<p><%= @track.description %></p>
+			<% end %>	
+			<p>Artikelnummer: <%= @track.item_number %></p>
+			<p>
+				<% if !@track.composer.blank? %>
+					Komposition: <%= @track.composer %>
+				<% end %>	
+			</p>
+		</div>
+	</div>
+
+</div>

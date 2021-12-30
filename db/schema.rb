@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_192503) do
+ActiveRecord::Schema.define(version: 2021_12_18_120817) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,22 @@ ActiveRecord::Schema.define(version: 2021_11_29_192503) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "tracks", force: :cascade do |t|
+    t.string "title"
+    t.string "composer"
+    t.string "item_number"
+    t.boolean "published_status", default: false
+    t.datetime "published_at"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
+    t.index ["item_number"], name: "index_tracks_on_item_number", unique: true
+    t.index ["title"], name: "index_tracks_on_title", unique: true
+    t.index ["user_id", "created_at"], name: "index_tracks_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_tracks_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -59,4 +75,5 @@ ActiveRecord::Schema.define(version: 2021_11_29_192503) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "tracks", "users"
 end

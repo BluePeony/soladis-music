@@ -60,4 +60,9 @@ module SessionsHelper
 		session[:forwarding_url] = request.original_url if request.get?
 	end
 
+	# Checks if the User is admin or superadmin
+	def super_admin_user?(user)
+		user.admin? || user.superadmin? 
+	end
+
 end
