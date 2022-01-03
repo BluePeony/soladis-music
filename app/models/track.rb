@@ -8,7 +8,7 @@ class Track < ApplicationRecord
 	validates :user_id, presence: true
 	validates :image, presence: true, content_type: { in: %w[image/jpeg image/jpg image/png image/gif], message: "must be a valid image format: JPEG, PNG or GIF" },
 										size: 				{ less_than: 5.megabytes, message: "is too big. It should be less than 5 MB" }
-	validates :audio, presence: true, content_type: { in: %w[audio/wav], message: "must be a valid audio format: WAV" }
+	validates :audio, presence: true
 
 
 	# Returns a resized image for display
