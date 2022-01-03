@@ -52,7 +52,7 @@ class TracksController < ApplicationController
     title = @track.title    
     if @track.destroy
       flash[:success] = "Track '#{title}' gelöscht."
-      redirect_back(fallback_location: tracks_path)
+      redirect_to tracks_path
     end  
   end
 
@@ -69,10 +69,12 @@ class TracksController < ApplicationController
     def about_track
       @track = Track.find_by(id: params[:id])
 
+
       if !@track
         flash[:danger] = "Der gesuchte Track existiert nicht."
         redirect_to root_url
       end
+
 
       if "edit_update_destroy".include?(params[:action])
         
