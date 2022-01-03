@@ -31,6 +31,12 @@
 					Komposition: <%= @track.composer %>
 				<% end %>	
 			</p>
+			<p>
+				<%= audio_tag(url_for(@track.audio), controls: '') %>
+			</p>
+			<p>
+				<%= link_to "Track herunterladen", url_for(@track.audio), download: true, class: "user-edit-button" %>
+			</p>
 		</div>
 	</div>
 

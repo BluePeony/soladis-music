@@ -10,6 +10,7 @@ class TracksController < ApplicationController
   def create
     @track = @user.tracks.build(track_params)
     @track.image.attach(params[:track][:image])
+    @track.audio.attach(params[:track][:audio])
     if @track.save
       if @track.published_status
         @track.update_attribute(:published_at, Time.zone.now)
@@ -57,7 +58,7 @@ class TracksController < ApplicationController
   private
 
     def track_params
-      params.require(:track).permit(:title, :description, :item_number, :composer, :published_status, :image)
+      params.require(:track).permit(:title, :description, :item_number, :composer, :published_status, :image, :audio)
     end
 
     def get_user

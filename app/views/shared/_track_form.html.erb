@@ -20,8 +20,9 @@
 		<%= f.label :composer, 'Komposition' %>
 		<%= f.text_field :composer %>
 
+		<!--Für das Bild -->
 		<% if request.path.include?("/edit") %>
-			<span>Bild zum Track: <%= @track.image.filename %></span>
+			<span>Bild zum Track: <i><%= @track.image.filename %></i></span>
 			<div id="track-image-edit"><%= image_tag @track.image %></div>
 			<%= f.label :image, 'Anderes Bild auswählen' %>
 		<% else %>
@@ -29,6 +30,18 @@
 		<% end %>
 		
 		<%= f.file_field :image, accept: "image/jpeg,image/jpg,image/png,image/gif" %>
+
+		<!-- Für das Audio -->
+		<% if request.path.include?("/edit")%>
+			<span>Track-Audio: <i><%= @track.audio.filename %></i></span>
+			<div class="edit-audio">
+				<%= f.label :audio, 'Anderen Track auswählen' %>
+			</div>
+		<% else %>
+			<%= f.label :audio, 'Track auswählen' %>
+		<% end %>
+
+		<%= f.file_field :audio, accept: "audio/wav" %>
 
 		<%= f.label :published_status, class: 'user-checkbox' do %>
 			<%= f.check_box :published_status %>
