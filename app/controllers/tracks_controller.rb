@@ -48,10 +48,11 @@ class TracksController < ApplicationController
 
   end
 
-  def destroy    
+  def destroy
+    title = @track.title    
     if @track.destroy
-      flash[:success] = "Track #{@track.title} gelöscht."
-      redirect_back(fallback_location: root_url)
+      flash[:success] = "Track '#{title}' gelöscht."
+      redirect_back(fallback_location: tracks_path)
     end  
   end
 
@@ -80,7 +81,7 @@ class TracksController < ApplicationController
         elsif params[:action] == 'update'
           action = "Speicherung der Änderungen für #{@track.title}"
         elsif params[:action] == 'destroy'
-          action = "Löschung des #{@track.title}"
+          action = "Löschung des Tracks"
         end
 
         if ((@track.user_id != @user.id) && !super_admin_user?(@user)) # Autor || Admin || Superadmin
