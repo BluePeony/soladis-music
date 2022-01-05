@@ -56,6 +56,10 @@ class TracksController < ApplicationController
     end  
   end
 
+  def all_tracks
+    @tracks = Track.all
+  end
+
   private
 
     def track_params

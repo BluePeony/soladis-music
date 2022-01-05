@@ -1,0 +1,10 @@
+<% provide(:title, 'Alle Tracks') %>
+
+<div class="single-page" id="all-tracks-page">
+	
+	<h2>Alle Tracks (<%= @tracks.size %>)</h2>
+
+	<div class="all-tracks-table">
+		<%= render @tracks %>		
+	</div>
+</div>

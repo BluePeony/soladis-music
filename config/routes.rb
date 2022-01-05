@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/datenschutz', to: 'static_pages#datenschutz'
   get '/kontakt', to: 'static_pages#kontakt'
   get '/videos', to: 'static_pages#videos'
+  get '/all_tracks', to: 'tracks#all_tracks'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

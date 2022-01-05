@@ -729,6 +729,7 @@ span#user-name-index {
 
 #track-show-image img {
     border-radius: 4px;
+    width: 550px;
 }
 
 #track-show-attributes {
@@ -751,3 +752,55 @@ span#user-name-index {
 .edit-audio {
     margin-top: 10px;
 }
+
+// Alle Tracks page
+.all-tracks-table {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+  grid-gap: 50px;
+  overflow: hidden;
+
+  width: 100%;
+  margin: auto;
+}
+
+.all-tracks-row-item {
+    height: 100% ;
+    position: relative;
+}
+
+.all-tracks-row-info {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.all-tracks-row-info h3 {
+    letter-spacing: 1.0px;
+    padding: 5px;
+    border-radius: 30px;
+    font-weight: bold;
+    background-image: radial-gradient(ellipse, white, transparent 85%);
+}
+
+.all-tracks-row-info a {
+    text-decoration: none;
+}
+
+.all-tracks-row-audio audio {
+    height: 25px;
+    width: 95%;
+    opacity: 0.9;
+    margin-top: 60%;
+}
+
+.all-tracks-row-item img {
+    width: 100%;
+    border-radius: 8px;
+    opacity: 0.6;
+}
+
