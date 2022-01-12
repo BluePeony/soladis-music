@@ -48,6 +48,8 @@
 			<span>Veröffentlichen</span>
 		<% end %>
 
+		<%= f.select :user_id, User.all.map {|u| [u.name, u.id]} %>
+
 		<% if request.path.include?("/edit")%>
 			<div id="edit-track-links">
 				<%= f.submit("Speichern", class: 'edit-track-button') %>

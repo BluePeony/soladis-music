@@ -784,7 +784,12 @@ span#user-name-index {
     padding: 5px;
     border-radius: 30px;
     font-weight: bold;
-    background-image: radial-gradient(ellipse, white, transparent 85%);
+    //background-image: radial-gradient(ellipse, rgba(255, 255, 255, 1.0) 35%, rgba(255,255,255,0.1));
+    background-image: radial-gradient(ellipse, white 35%, transparent 100%);
+    //background: white;
+    //mask:radial-gradient(circle at 20% 40%, transparent , #fff 50%);
+    //background-image: radial-gradient(ellipse, white, transparent 100%);
+    //background-image: radial-gradient(ellipse, white 40%, transparent 100%);
 }
 
 .all-tracks-row-info a {
