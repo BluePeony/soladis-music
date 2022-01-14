@@ -10,6 +10,9 @@ class Track < ApplicationRecord
 										size: 				{ less_than: 5.megabytes, message: "is too big. It should be less than 5 MB" }
 	validates :audio, presence: true, content_type: { in: "audio/x-wav", message: "must be a valid format: WAV"}
 
+	has_many :track_videos
+	has_many :videos, through: :track_videos
+
 
 	# Returns a resized image for display
 	def display_image

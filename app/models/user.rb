@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_many :tracks
+	has_many :videos
 	attr_accessor :remember_token, :activation_token, :reset_token
 
 	before_save :downcase_email
