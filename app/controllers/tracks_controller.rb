@@ -57,7 +57,7 @@ class TracksController < ApplicationController
   end
 
   def all_tracks
-    @tracks = Track.all
+    @tracks = Track.where(published_status: true)
   end
 
   private
