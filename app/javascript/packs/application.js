@@ -8,8 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
+import "easy-autocomplete"
 import "@fortawesome/fontawesome-free/css/all"
+import "packs/tracks"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+

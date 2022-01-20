@@ -1,0 +1,15 @@
+<div class="soladis-form" id="video-form">
+
+	<%= form_with(model: @video, local: true) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+
+		<%= f.label :url, 'Video-URL'%>
+		<%= f.text_field :url %>
+
+		<%= f.label :used_tracks, 'Welche Tracks kommen im Video vor?' %>
+    <%= f.text_field :used_tracks, placeholder: "Trenne die Tracks durch Komma", data: { behavior: "autocomplete" } %>
+
+		<%= f.submit yield(:button_text) %>
+	<% end %>
+
+</div>

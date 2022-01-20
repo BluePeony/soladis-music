@@ -2,6 +2,7 @@ class TracksController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :index, :destroy]
   before_action :get_user
   before_action :about_track, only: [:edit, :update, :show, :destroy]
+  before_action :force_json, only: :search
 
   def new
     @track = @user.tracks.build
@@ -36,7 +37,6 @@ class TracksController < ApplicationController
   end
 
   def show
-    puts params[:action]
   end
 
   def index
@@ -58,6 +58,11 @@ class TracksController < ApplicationController
 
   def all_tracks
     @tracks = Track.where(published_status: true)
+  end
+
+  def search
+    t = params[:t].downcase
+    @tracks = Track.where("title LIKE ?", "%#{t}%")
   end
 
   private
@@ -97,5 +102,9 @@ class TracksController < ApplicationController
         
       end
 
+    end
+
+    def force_json
+      request.format = :json
     end
 end

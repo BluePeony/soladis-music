@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'videos/new'
+  get 'videos/edit'
+  get 'videos/index'
+  get 'videos/show'
   get 'tracks/new'
   get 'tracks/create'
   get 'tracks/edit'
@@ -6,6 +10,7 @@ Rails.application.routes.draw do
   get 'tracks/show'
   get 'tracks/index'
   get 'tracks/destroy'
+  get 'tracks/search', to: 'tracks#search'
   get 'password_resets/new'
   get 'password_resets/edit'
 	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -16,7 +21,6 @@ Rails.application.routes.draw do
   get '/impressum', to: 'static_pages#impressum'
   get '/datenschutz', to: 'static_pages#datenschutz'
   get '/kontakt', to: 'static_pages#kontakt'
-  get '/videos', to: 'static_pages#videos'
   get '/all_tracks', to: 'tracks#all_tracks'
 
   get '/login', to: 'sessions#new'
@@ -29,5 +33,6 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :tracks
+  resources :videos
 
 end

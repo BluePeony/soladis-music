@@ -1,0 +1,14 @@
+<% provide(:title, "Video")%>
+
+<div class="single-page">
+	<iframe width="420" height="345" src="<%= @video.url %>"></iframe>
+	<p>
+		Verwendete Tracks: 
+		<% @video.tracks.each do |t| %>
+			<%= link_to t.title, track_path(t) %>
+		<% end %>
+	</p>
+	<p>
+		<%= link_to "Löschen", video_path(@video), method: :delete, data: {confirm: "Willst Du das Video wirlich löschen?"} %>
+	</p>
+</div>
