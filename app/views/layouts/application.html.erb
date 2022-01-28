@@ -3,14 +3,24 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&family=Noto+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond:wght@300;400;500&family=Gentium+Basic&family=Lato:wght@300;400&family=Montserrat&family=Vollkorn&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Nunito&family=PT+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800;900&family=Cabin:wght@500;600;700&family=Encode+Sans+Condensed:wght@500;600;700;800;900&family=Encode+Sans+Semi+Condensed:wght@500;600;700;800;900&family=Encode+Sans:wght@500;600;700&family=Fira+Sans:wght@500;600;700;800;900&family=Lato:wght@700;900&family=Merriweather+Sans:wght@500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Sans+SC:wght@500;700;900&family=Poppins:wght@600;700;800;900&family=Rubik:wght@500;600;700;800;900&family=Source+Sans+Pro:wght@600;700;900&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
