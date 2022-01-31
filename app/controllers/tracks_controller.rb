@@ -4,6 +4,10 @@ class TracksController < ApplicationController
   before_action :about_track, only: [:edit, :update, :show, :destroy]
   before_action :force_json, only: :search
 
+  def home
+    @chosen_tracks = Track.all.sample(4)
+  end
+
   def new
     @track = @user.tracks.build
   end

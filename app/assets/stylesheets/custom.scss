@@ -229,7 +229,7 @@ header {
     transition: border-bottom 0.75s;
 }
 
-#header-menu-list a:hover {
+#header-menu-list a:hover, #header-menu-list a.active{
     border-bottom: 1.5px $heading-color solid;
 }
 
@@ -294,7 +294,8 @@ footer {
     letter-spacing: 1.0px;
     padding-bottom: 2px;
     border-radius: 1.5px;
-    border-bottom: 1.5px $background-color solid;
+    border-bottom: 0.8px $background-color solid;
+    transition: border-bottom 0.75s;
 }
 
 #footer-menu-list a:hover {
@@ -853,4 +854,28 @@ a.ui-button:active,
     background: #00999b;
     font-weight: normal;
     color: #ffffff;
+}
+
+/*Videos*/
+
+.video-wrapper {
+    column-count: 2;
+    column-gap: 50px;
+}
+
+.single-video {
+    margin-bottom: 50px;
+}
+
+#video-edit-icons {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+
+/*Homepage*/
+
+#more-tracks-button {
+    text-align: center;
+    margin-top: 50px;
 }

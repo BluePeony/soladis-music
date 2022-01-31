@@ -26,6 +26,7 @@
 				<p><%= @track.description %></p>
 			<% end %>	
 			<p>Artikelnummer: <%= @track.item_number %></p>
+			<p>Lizenz: <%= link_to "CC BY", "https://creativecommons.org/licenses/?lang=en", target: '_blank' %></p>
 			<p>
 				<% if !@track.composer.blank? %>
 					Komposition: <%= @track.composer %>

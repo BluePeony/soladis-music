@@ -1,2 +1,8 @@
-<h1>Videos#index</h1>
-<p>Find me in app/views/videos/index.html.erb</p>
+<% provide(:title, "Video")%>
+
+<div class="single-page", id="index-video-page">
+	<h2>Videos mit Tracks von Soladis-Music</h2>
+	<div class="video-wrapper">
+		<%= render @videos %>
+	</div>	
+</div>

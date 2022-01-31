@@ -1,0 +1,18 @@
+<% provide(:title, "Home") %>
+
+<div class="single-page" id="homepage">
+	<h2>Gemafreie Musik ohne Einschränkungen für maximale Freiheit im Projekt</h2>
+	<p>
+		Gemafreie Musik muss nicht schlecht sein. Dazu möchte ich versuchen einen Beitrag zu leisten. Mit dieser noch kleinen Musikplattform biete ich dir Musik für deine Projekte. Vom privaten You-Tube-Video bis zum TV-Werbespot. Die Musik steht im Rahmen der <%= link_to "CC BY", "https://creativecommons.org/licenses/?lang=en" %>-Lizenz kostenlos direkt zum Download bereit. Mehr Infos: <%= link_to "In Kürze", in_kuerze_path %>.<br>
+		Viel Spaß beim Durchstöbern, <br>
+		<i>Konrad</i>
+	</p>
+
+	<h2>Kleine Auswahl</h2>
+	<div class="all-tracks-table">
+		<%= render @chosen_tracks %>
+	</div>
+	<div id="more-tracks-button">
+		<%= link_to "Weitere Tracks ansehen", all_tracks_path, class:'user-edit-button' %>
+	</div>
+</div>

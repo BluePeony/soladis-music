@@ -1,2 +1,7 @@
-<h1>Videos#edit</h1>
-<p>Find me in app/views/videos/edit.html.erb</p>
+<% provide(:title, 'Video bearbeiten') %>
+<% provide(:button_text, 'Speichern') %>
+
+<div class="single-page", id="edit-video-page">
+	<h2>Video bearbeiten</h2>
+	<%= render 'shared/video_form' %>
+</div>

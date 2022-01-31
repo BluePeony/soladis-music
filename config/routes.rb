@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
 	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'application#home'
+  root 'tracks#home'
+  get '/home', to: 'tracks#home'
   get '/signup', to: 'users#new'
   get '/in-kuerze', to:  'static_pages#in_kuerze' #test 
   get '/ueber-mich', to: 'static_pages#ueber_mich'
