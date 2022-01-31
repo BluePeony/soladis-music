@@ -1,32 +1,32 @@
 <header class="header-footer" id="header">
 
-<%= link_to root_path, class:'title-link' do %>
-	<div id="title">
-		<div id="soladis-title">
-			Soladis-Music
+	<%= link_to root_path, class:'title-link' do %>
+		<div id="title">
+			<div id="soladis-title">
+				Soladis-Music
+			</div>
+			<div id=soladis-subtitle>
+				Gemafreie Musik
+			</div>
 		</div>
-		<div id=soladis-subtitle>
-			Gemafreie Musik
-		</div>
-	</div>
-<% end %>	
+	<% end %>	
 
 	<nav id="header-menu">
 		<ul class="nav-ul" id="header-menu-list">
 			<li>
-				<%= active_link_to('Home', home_path) %>
+				<%= active_link_to('Home', root_path, active: :exclusive) %>
 			</li>
 			<li>
-				<%= active_link_to('In Kürze', in_kuerze_path) %>
+				<%= active_link_to('In Kürze', in_kuerze_path, active: :exclusive) %>
 			</li>
 			<li>
-				<%= active_link_to('Musik', all_tracks_path) %>
+				<%= active_link_to('Musik', all_tracks_path, active: :exclusive) %>
 			</li>
 			<li>
-				<%= active_link_to('Über mich', ueber_mich_path) %>
+				<%= active_link_to('Über mich', ueber_mich_path, active: :exclusive) %>
 			</li>
 			<li>
-				<%= active_link_to('Videos', videos_path) %>
+				<%= active_link_to('Videos', videos_path, active: :exclusive) %>
 			</li>
 			<!--<li>
 				<%= link_to('Kontakt', kontakt_path) %>

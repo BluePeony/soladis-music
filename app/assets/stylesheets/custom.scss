@@ -5,12 +5,12 @@
 @font-face {
     font-family: 'SangBleuSunrise-Regular';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuSunrise-Regular-WebTrial.eot');
-    src: font-url('SangBleuSunrise-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuSunrise-Regular-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuSunrise-Regular-WebTrial.woff') format('woff'),
-         font-url('SangBleuSunrise-Regular-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuSunrise-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuSunrise-Regular-WebXL.eot');
+    src: font-url('SangBleuSunrise-Regular-WebXL.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuSunrise-Regular-WebXL.woff2') format('woff2'),
+         font-url('SangBleuSunrise-Regular-WebXL.woff') format('woff'),
+         font-url('SangBleuSunrise-Regular-WebXL.ttf') format('truetype'),
+         font-url('SangBleuSunrise-Regular-WebXL.svg#SangBleuSunrise-Regular-WebXL') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -18,105 +18,12 @@
 @font-face {
     font-family: 'SangBleuSunrise-Light';
     //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuSunrise-Light-WebTrial.eot');
-    src: font-url('SangBleuSunrise-Light-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuSunrise-Light-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuSunrise-Light-WebTrial.woff') format('woff'),
-         font-url('SangBleuSunrise-Light-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuSunrise-Light-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SangBleuSunrise-Livre';
-    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuSunrise-Livre-WebTrial.eot');
-    src: font-url('SangBleuSunrise-Livre-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuSunrise-Livre-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuSunrise-Livre-WebTrial.woff') format('woff'),
-         font-url('SangBleuSunrise-Livre-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuSunrise-Livre-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SangBleuSunrise-Medium';
-    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuSunrise-Medium-WebTrial.eot');
-    src: font-url('SangBleuSunrise-Medium-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuSunrise-Medium-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuSunrise-Medium-WebTrial.woff') format('woff'),
-         font-url('SangBleuSunrise-Medium-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuSunrise-Medium-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SangBleuSunrise-Bold';
-    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuSunrise-Bold-WebTrial.eot');
-    src: font-url('SangBleuSunrise-Bold-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuSunrise-Bold-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuSunrise-Bold-WebTrial.woff') format('woff'),
-         font-url('SangBleuSunrise-Bold-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuSunrise-Bold-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
-@font-face {
-    font-family: 'SangBleuEmpire-Regular';
-    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuEmpire-Regular-WebTrial.eot');
-    src: font-url('SangBleuEmpire-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuEmpire-Regular-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuEmpire-Regular-WebTrial.woff') format('woff'),
-         font-url('SangBleuEmpire-Regular-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuEmpire-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SangBleuKingdom-Regular';
-    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuKingdom-Regular-WebTrial.eot');
-    src: font-url('SangBleuKingdom-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuKingdom-Regular-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuKingdom-Regular-WebTrial.woff') format('woff'),
-         font-url('SangBleuKingdom-Regular-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuKingdom-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SangBleuRepublic-Regular';
-    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuRepublic-Regular-WebTrial.eot');
-    src: font-url('SangBleuRepublic-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuRepublic-Regular-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuRepublic-Regular-WebTrial.woff') format('woff'),
-         font-url('SangBleuRepublic-Regular-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuRepublic-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SangBleuVersailles-Regular';
-    //src: url('SangBleuSunrise-Regular-WebTrial.otf');
-    src: font-url('SangBleuVersailles-Regular-WebTrial.eot');
-    src: font-url('SangBleuVersailles-Regular-WebTrial.eot?#iefix') format('embedded-opentype'),
-         font-url('SangBleuVersailles-Regular-WebTrial.woff2') format('woff2'),
-         font-url('SangBleuVersailles-Regular-WebTrial.woff') format('woff'),
-         font-url('SangBleuVersailles-Regular-WebTrial.ttf') format('truetype'),
-         font-url('SangBleuVersailles-Regular-WebTrial.svg#SangBleuSunrise-Regular-WebTrial') format('svg');
+    src: font-url('SangBleuSunrise-Light-WebXL.eot');
+    src: font-url('SangBleuSunrise-Light-WebXL.eot?#iefix') format('embedded-opentype'),
+         font-url('SangBleuSunrise-Light-WebXL.woff2') format('woff2'),
+         font-url('SangBleuSunrise-Light-WebXL.woff') format('woff'),
+         font-url('SangBleuSunrise-Light-WebXL.ttf') format('truetype'),
+         font-url('SangBleuSunrise-Light-WebXL.svg#SangBleuSunrise-Regular-WebXL') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -186,6 +93,14 @@ header {
     color: $heading_color;
     font-weight: bold;
     font-size: 2.5em;
+}
+
+#big-m {
+    margin-top: 100px;
+    font-family: 'El Messiri', sans-serif;
+    color: $heading_color;
+    font-weight: bold;
+    font-size: 600px;
 }
 
 #soladis-subtitle {
