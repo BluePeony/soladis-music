@@ -1,4 +1,4 @@
-<% if request.path != "/all_tracks" && request.path != "/home" %>
+<% if request.path != "/all_tracks" && request.path != "/home" && request.path != root_path %>
 
 	<div class="index-row-wrapper">
 		<div class="index-row index-row-title"><%= link_to track.title, track %></div>
