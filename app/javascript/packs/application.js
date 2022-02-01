@@ -9,7 +9,6 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
 import "jquery-ui"
-import "easy-autocomplete"
 import "@fortawesome/fontawesome-free/css/all"
 import "packs/tracks"
 
