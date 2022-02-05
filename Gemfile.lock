@@ -67,6 +67,8 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ancestry (4.1.0)
+      activerecord (>= 5.2.6)
     ansi (1.5.0)
     aws-eventstream (1.2.0)
     aws-partitions (1.551.0)
@@ -286,6 +288,7 @@ PLATFORMS
 DEPENDENCIES
   active_link_to
   active_storage_validations (= 0.8.9)
+  ancestry
   aws-sdk-s3 (= 1.87.0)
   bcrypt (= 3.1.13)
   bootsnap (>= 1.4.4)

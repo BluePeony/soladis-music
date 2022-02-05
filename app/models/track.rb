@@ -1,5 +1,6 @@
 class Track < ApplicationRecord
 	belongs_to :user
+	belongs_to :category
 	has_one_attached :image
 	has_one_attached :audio
 	default_scope -> {order(created_at: :desc)}

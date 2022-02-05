@@ -20,6 +20,10 @@
 		<%= f.label :composer, 'Komposition' %>
 		<%= f.text_field :composer %>
 
+		<%= f.label :category_id, 'Kategorie' %>
+
+		<%= f.select(:category_id, nested_dropdown(Category.all.arrange), prompt: "Kategorie wählen",) %>
+
 		<!--Für das Bild -->
 		<% if request.path.include?("/edit") %>
 			<span>Bild zum Track: <i><%= @track.image.filename %></i></span>
@@ -47,8 +51,6 @@
 			<%= f.check_box :published_status %>
 			<span>Veröffentlichen</span>
 		<% end %>
-
-		<%= f.select :user_id, User.all.map {|u| [u.name, u.id]} %>
 
 		<% if request.path.include?("/edit")%>
 			<div id="edit-track-links">

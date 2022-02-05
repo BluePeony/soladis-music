@@ -2,7 +2,27 @@
 
 <div class="single-page" id="all-tracks-page">
 	
-	<h2>Alle Tracks (<%= @tracks.size %>)</h2>
+	<% if params[:category_id].blank? %>
+		<h2>Alle Tracks (<%= @tracks.size %>)</h2>
+	<% else %>
+		<% if @category.parent %>
+			<h2>Kategorie <%= @category.parent.title %> - <%= @category.title %> (<%= @tracks.size %>)</h2>
+		<% else %>
+			<h2>Kategorie <%= @category.title %> (<%= @tracks.size %>) </h2>
+		<% end %>
+	<% end %>
+
+	<div id="category-filter">
+		<%= form_with(url: all_tracks_url, method: :get, local: true) do |f| %>
+
+
+  	<%= f.select(:category_id, nested_dropdown(Category.all.arrange), prompt: "Kategorie wählen",) %>
+
+		<%= f.submit "Filtern", class:'user-edit-button' %>
+		<%= f.submit "Zurücksetzen", class:'user-edit-button' %>
+
+		<% end %>
+	</div>
 
 	<div class="all-tracks-table">
 		<%= render @tracks %>		

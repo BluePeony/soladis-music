@@ -248,7 +248,7 @@ footer {
 }
 
 
-h1, h2, h3 {
+h1, h2, h3, h4{
     color: $heading_color;
     font-family: 'SangBleuSunrise-Light';
     font-weight: normal;
@@ -281,15 +281,21 @@ a:hover {
 
 /*signup-form and login-form*/
 
-.soladis-form form, .soladis-form p {
+.soladis-form form, .soladis-form p{
     width: 30%;
     margin: auto;
     position: relative;
     
 }
 
+#category-filter form {
+    width: 50%;
+    margin: auto;
+    position: relative;
+}
+
 /* new track form*/
-#track-form form, #track-edit-form form {
+#track-form form, #track-edit-form form, #category-filter form {
     margin-left: 0px;
 }
 
@@ -298,7 +304,7 @@ a:hover {
     margin-bottom: 50px;
 }
 
-.soladis-form input, .soladis-form textarea {
+.soladis-form input, .soladis-form textarea, .soladis-form select {
     display: block;
     width: 100%;
     margin-bottom: 30px;
@@ -307,6 +313,37 @@ a:hover {
     border-radius: 4px;
     font-family: 'SangBleuSunrise-Regular';
     font-size: 15px;
+    background-color: white;
+}
+
+#category-filter label {
+    margin-right: 20px;
+}
+
+#category-filter select {
+    width: 40%;
+    margin-bottom: 30px;
+    height: 30px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    font-family: 'SangBleuSunrise-Regular';
+    font-size: 15px;
+    background-color: white;
+    margin-right: 30px;
+}
+
+#category_id > option:nth-child(2), #category_id > option:nth-child(5), #category_id > option:nth-child(15), #category_id > option:nth-child(23), #category_id > option:nth-child(29) {
+    font-weight: bold;
+}
+
+#category-filter input[type="submit"] {
+    font-size: 14px;
+    font-family: 'SangBleuSunrise-Regular';
+}
+
+#track_category_id > option:nth-child(1), #track_category_id > option:nth-child(4), #track_category_id > option:nth-child(14), #track_category_id > option:nth-child(22), #track_category_id > option:nth-child(28) {
+    font-weight: bold;
+    letter-spacing: 6.5;
 }
 
 .soladis-form input[type=file] {
@@ -662,6 +699,10 @@ span#user-name-index {
     position: relative;
 }
 
+.track-show-more{
+    margin-top: 80px;
+}
+
 //Track Edit page
 #track-image-edit img {
     width: 100px;
@@ -676,7 +717,7 @@ span#user-name-index {
 // Alle Tracks page
 .all-tracks-table {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 22.3% 22.3% 22.3% 22.3%;
   grid-auto-rows: auto;
   grid-auto-columns: auto;
   grid-gap: 50px;
@@ -684,6 +725,10 @@ span#user-name-index {
 
   width: 100%;
   margin: auto;
+}
+
+#show-more-tracks {
+    grid-template-columns: 37% 37%;
 }
 
 .all-tracks-row-item {
@@ -728,6 +773,35 @@ span#user-name-index {
     border-radius: 8px;
     opacity: 0.75;
 }
+
+.track-show-more h3 {
+    font-size: 8px;
+}
+.track-show-more h4 {
+    font-size: 18px;
+}
+
+.track-show-more a {
+    font-size: 15px;
+}
+
+.track-show-more audio {
+    margin-top: 65%;
+}
+
+.track-show-audio-download {
+    display: flex;
+    align-items: center;
+}
+
+.track-show-audio-download span {
+    display: inline-block;
+}
+
+#track-show-download {
+    margin-left: 50px;
+}
+
 
 /*Video*/
 //#ui-id-1 {
@@ -797,4 +871,9 @@ a.ui-button:active,
 #more-tracks-button {
     text-align: center;
     margin-top: 50px;
+}
+
+
+#category-filter {
+    margin-left: 0px;
 }

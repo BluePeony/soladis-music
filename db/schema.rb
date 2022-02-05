@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_140739) do
+ActiveRecord::Schema.define(version: 2022_02_03_162958) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 2022_01_17_140739) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["title"], name: "index_categories_on_title"
+  end
+
   create_table "track_videos", force: :cascade do |t|
     t.integer "track_id", null: false
     t.integer "video_id", null: false
@@ -59,6 +68,8 @@ ActiveRecord::Schema.define(version: 2022_01_17_140739) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_tracks_on_category_id"
     t.index ["item_number"], name: "index_tracks_on_item_number", unique: true
     t.index ["title"], name: "index_tracks_on_title", unique: true
     t.index ["user_id", "created_at"], name: "index_tracks_on_user_id_and_created_at"
@@ -96,6 +107,7 @@ ActiveRecord::Schema.define(version: 2022_01_17_140739) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "track_videos", "tracks"
   add_foreign_key "track_videos", "videos"
+  add_foreign_key "tracks", "categories"
   add_foreign_key "tracks", "users"
   add_foreign_key "videos", "users"
 end

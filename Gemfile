@@ -35,6 +35,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'active_link_to'
 gem 'font_awesome5_rails'
 gem 'will_paginate',  '3.3.0'
+gem 'ancestry'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

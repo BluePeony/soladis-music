@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :index, :destroy]
-  before_action :get_user
+  before_action :get_user, only: [:new, :create, :edit, :update, :destroy, :index]
   before_action :about_track, only: [:edit, :update, :show, :destroy]
   before_action :force_json, only: :search
 
@@ -28,6 +28,7 @@ class TracksController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -41,6 +42,8 @@ class TracksController < ApplicationController
   end
 
   def show
+    @cat_parent = Category.find_by(id: @track.category_id).parent
+    @cat = Category.find_by(id: @track.category_id)
   end
 
   def index
@@ -61,7 +64,18 @@ class TracksController < ApplicationController
   end
 
   def all_tracks
-    @tracks = Track.where(published_status: true)
+    if params[:category_id].blank? # show all published tracks
+      @tracks = Track.where(published_status: true)
+    else
+      @category = Category.find_by(id: params[:category_id])
+      if @category.has_parent? # subcategory
+        @tracks = Track.where(published_status: true, category_id: params[:category_id])
+      else # main category
+        @tracks = Track.where(published_status: true, category_id: @category.child_ids)
+      end
+      
+      
+    end
   end
 
   def search
@@ -72,7 +86,7 @@ class TracksController < ApplicationController
   private
 
     def track_params
-      params.require(:track).permit(:title, :description, :item_number, :composer, :published_status, :image, :audio)
+      params.require(:track).permit(:title, :description, :item_number, :composer, :category_id, :published_status, :image, :audio)
     end
 
     def get_user

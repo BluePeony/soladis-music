@@ -1,4 +1,4 @@
-<% if request.path != "/all_tracks" && request.path != "/home" && request.path != "/" %>
+<% if current_user && (request.path == tracks_path || request.path == user_path(current_user)) %>
 
 	<div class="index-row-wrapper">
 		<div class="index-row index-row-title"><%= link_to track.title, track %></div>
@@ -16,7 +16,7 @@
 			<% end %>
 		</div>
 		<div class="index-row index-aktionen">
-			<% if (track.user_id == @user.id) || super_admin_user?(@user) %>
+			<% if current_user && ((track.user_id == current_user.id) || super_admin_user?(current_user)) %>
 				<span><%= link_to "Bearbeiten", edit_track_path(track), class: 'user-edit-button'%></span>
 				<span><%= link_to "Löschen", track_path(track), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
 			<% else %>

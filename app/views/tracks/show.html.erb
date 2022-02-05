@@ -8,7 +8,7 @@
 	
 	<h2>
 		<%= @track.title %>
-		<% if ((@track.user_id == @user.id) || super_admin_user?(@user)) %>
+		<% if current_user && ((@track.user_id == current_user.id) || super_admin_user?(current_user)) %>
 			<%= link_to (fa_icon "pen"), edit_track_path(@track), class: "h2-fa-icon", alt: "Bearbeiten", title: "Bearbeiten" %>
 			<%= link_to (fa_icon "trash-alt"), track_path(@track), method: :delete, data: { confirm: "Willst Du den Track wirklich löschen?" }, class: "h2-fa-icon", alt: "Löschen", title: "Löschen" %>	
 		<% end %>
@@ -25,19 +25,33 @@
 			<% if @track.description.length > 0 %>
 				<p><%= @track.description %></p>
 			<% end %>	
-			<p>Artikelnummer: <%= @track.item_number %></p>
 			<p>Lizenz: <%= link_to "CC BY", "https://creativecommons.org/licenses/?lang=en", target: '_blank' %></p>
 			<p>
 				<% if !@track.composer.blank? %>
 					Komposition: <%= @track.composer %>
 				<% end %>	
 			</p>
-			<p>
-				<%= audio_tag(url_for(@track.audio), controls: '') %>
+			<p>Kategorie: <%= @cat_parent.title %> - <%= @cat.title %></p>
+			<p class="track-show-audio-download">
+				<span class="track-show-span"><%= audio_tag(url_for(@track.audio), controls: '') %></span>
+				<span class="track-show-span" id="track-show-download"><%= link_to "Track herunterladen", url_for(@track.audio), download: true, class: "user-edit-button" %></span>
 			</p>
 			<p>
-				<%= link_to "Track herunterladen", url_for(@track.audio), download: true, class: "user-edit-button" %>
+				
 			</p>
+
+			<div class="track-show-more">
+				<h4>Weitere Tracks der Kategorie <%= link_to "#{@cat.parent.title} - #{@cat.title}", "/all_tracks?category_id=#{@cat.id}" %></h4>
+				<% all_tracks = Track.where(category_id: @track.category_id).to_a %>
+				<% all_tracks = all_tracks.select {|t| t!= @track } %>
+				<% if all_tracks.size > 2 %>
+					<% all_tracks = all_tracks.sample(2) %>
+				<% end %>
+				
+				<div class="all-tracks-table" id="show-more-tracks">
+						<%= render all_tracks %>		
+					</div>
+			</div>
 		</div>
 	</div>
 
