@@ -205,7 +205,7 @@ footer {
 
 }
 #footer-menu-list a {
-    color: $text-color;
+    color: $text_color;
     text-decoration: none;
     font-size: 14px;
     font-family: 'SangBleuSunrise-Light';
@@ -218,7 +218,7 @@ footer {
 }
 
 #footer-menu-list a:hover {
-    border-bottom: 0.8px $text-color solid;
+    border-bottom: 0.8px $text_color solid;
 }
 .single-page {
     width: 85%;
