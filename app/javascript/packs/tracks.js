@@ -60,6 +60,14 @@ document.addEventListener("turbolinks:load", function() {
         return false;
       }
     });
+
+    $(document).ready(function() {
+    
+      //show-hide mobile menu
+      $("#mobile-menu-bars").click(function(){
+        $(".header-menu").toggleClass("mobile-menu-vis");
+      });
+    });
 });
 
 

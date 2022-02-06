@@ -3,7 +3,7 @@
 	<%= link_to root_path, class:'title-link' do %>
 		<div id="title">
 			<div id="soladis-title">
-				Soladis-Music
+				<span>Soladis-Music</span><span class="mobile-menu-bars"><%= fa_icon "bars" %></span>
 			</div>
 			<div id=soladis-subtitle>
 				Gemafreie Musik
@@ -11,7 +11,7 @@
 		</div>
 	<% end %>	
 
-	<nav id="header-menu">
+	<nav class="header-menu">
 		<ul class="nav-ul" id="header-menu-list">
 			<li>
 				<%= active_link_to('Home', root_path, active: :exclusive) %>
