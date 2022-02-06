@@ -1,14 +1,12 @@
 <header class="header-footer" id="header">
 
 	<div id="title">
-		<%= link_to root_path, class:'title-link' do %>
-			<div id="soladis-title">
-				<span>Soladis-Music</span>
-			</div>
-			<div id=soladis-subtitle>
-				Gemafreie Musik
-			</div>
-		<% end %>	
+		<div id="soladis-title">
+			<span><%= link_to "Soladis-Music", root_path, class:'title-link' %></span>
+		</div>
+		<div id=soladis-subtitle>
+			<%= link_to "Gemafreie Musik", root_path, class:'title-link', id:'subtitle-link' %>
+		</div>	
 	</div>
 
 	<div class="mobile-menu-bars"><%= fa_icon "bars" %></div>

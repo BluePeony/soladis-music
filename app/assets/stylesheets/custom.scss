@@ -87,6 +87,11 @@ header {
 
 .title-link {
     text-decoration: none;
+    color: $heading_color;
+}
+
+#subtitle-link {
+    color: $text_color;
 }
 
 #soladis-title {
@@ -899,14 +904,7 @@ a.ui-button:active,
     }
 
     #title {
-        width: 75%;
-    }
-
-
-    #soladis-title {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
+        display: inline;
     }
 
     .mobile-menu-bars {
