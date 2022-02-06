@@ -64,7 +64,7 @@ document.addEventListener("turbolinks:load", function() {
     $(document).ready(function() {
     
       //show-hide mobile menu
-      $("#mobile-menu-bars").click(function(){
+      $(".mobile-menu-bars").click(function(){
         $(".header-menu").toggleClass("mobile-menu-vis");
       });
     });

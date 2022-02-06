@@ -906,6 +906,10 @@ a.ui-button:active,
 
     .mobile-menu-bars {
         display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 30%;
+        color: $heading_color;
     }
 
     .header-menu {
