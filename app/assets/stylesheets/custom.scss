@@ -228,17 +228,9 @@ footer {
     top: 40px;
 }
 
-#ueber-mich-container {
-    display: flex;
-}
-
-#ueber-mich-text {
-    width: 70vw;
-    padding-right: 50px;
-}
-
-#ueber-mich-text span {
-    text-align: justify;
+#ueber-mich-container img {
+    float: right;
+    margin-left: 50px;
 }
 
 #ueber-mich-img-img {
@@ -681,16 +673,16 @@ span#user-name-index {
 }
 
 #track-show-image {
-    width: 50%;
+    width: 40%;
 }
 
 #track-show-image img {
     border-radius: 4px;
-    width: 550px;
+    width: 100%;
 }
 
 #track-show-attributes {
-    width: 45%;
+    width: 50%;
     position: relative;
 }
 
@@ -876,4 +868,119 @@ a.ui-button:active,
 
 #category-filter {
     margin-left: 0px;
+}
+
+/*--------------------------------------Mobile styles-----------------------------------*/
+/*Smartphone Portrait mode*/
+
+@media (max-width: 600px) and (orientation: portrait){
+    /*---------General----------*/
+    h2 {
+        font-size: 18px;
+    }
+
+    .single-page {
+        top: 25px;
+    }
+
+    /*---------Header-----------*/
+    header {
+        display: block;
+    }
+
+    #header-menu {
+        margin-top: 30px;
+    }
+
+    #header-menu-list {
+        padding-left: 0px;
+    }
+
+    /*---------Home-------------*/
+    .all-tracks-table {
+        grid-template-columns: 100%;
+    }
+
+    /*---------Alle Tracks------*/
+    #category-filter form, #category-filter form select {
+        width: 100%;
+    }
+
+    #category-filter {
+        margin-bottom: 25px;
+    }
+
+    /*---------Video------------*/
+    .video-wrapper {
+        column-count: 1;
+    }
+
+    .single-video {
+        margin-bottom: 15px;
+    }
+
+    .single-video iframe {
+        height: 100%;
+    }
+
+    /*---------Ueber mich-------*/
+    #ueber-mich-container img {
+        float: right;
+        margin-left: 20px;
+    }
+
+    #ueber-mich-img-img {
+        width: 38vw;
+    }
+
+    /*---------Single Track-----*/
+    .track-show-audio-download {
+        position: absolute;
+        left: -100%;
+    }
+
+    .track-show-span audio {
+        width: 190px;
+        height: 45px;
+    }
+
+    #track-show-download {
+        margin-left: 30px;
+    }
+
+    .track-show-more {
+        position: absolute;
+        left: -100%;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .track-show-more h4 {
+        font-size: 15px;
+    }
+
+    .track-show-more a {
+        display: block;
+    }
+
+    #show-more-tracks {
+        grid-template-columns: 80%;
+    }
+
+    /*---------Footer-----------*/
+    footer {
+        display: block;
+        margin-top: 75px;
+
+    }
+
+    #footer-menu-list {
+        padding-left: 0px;
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+
+    #footer-menu-list > li:nth-child(1) {
+        margin-right: 50px;
+    }
 }

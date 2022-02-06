@@ -12,6 +12,7 @@
 
     <%= stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'mobile' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&family=Noto+Serif&display=swap" rel="stylesheet">
@@ -35,7 +36,7 @@
     </div>
     <%= yield %>
     <%= render 'layouts/footer' %>
-    <%= debug(params) if Rails.env.development? %>
+    
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
       window.cookieconsent.initialise({

@@ -34,7 +34,7 @@
 			<p>Kategorie: <%= @cat_parent.title %> - <%= @cat.title %></p>
 			<p class="track-show-audio-download">
 				<span class="track-show-span"><%= audio_tag(url_for(@track.audio), controls: '') %></span>
-				<span class="track-show-span" id="track-show-download"><%= link_to "Track herunterladen", url_for(@track.audio), download: true, class: "user-edit-button" %></span>
+				<span class="track-show-span" id="track-show-download"><%= link_to "Download", url_for(@track.audio), download: true, class: "user-edit-button" %></span>
 			</p>
 			<p>
 				
