@@ -903,16 +903,13 @@ a.ui-button:active,
         position: relative;
     }
 
-    #title {
-        display: inline;
-    }
-
     .mobile-menu-bars {
         display: inline-block;
         position: absolute;
         right: 0;
         top: 27%;
         color: $heading_color;
+        z-index: 1000;
     }
 
     .header-menu {
