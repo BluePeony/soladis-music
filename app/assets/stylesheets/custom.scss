@@ -999,10 +999,10 @@ a.ui-button:active,
     }
 
     .track-show-more {
-        position: absolute;
+        position: relative;
         left: -100%;
+        width: 170%;
         margin-top: 0px;
-        margin-bottom: 20px;
     }
 
     .track-show-more h4 {
@@ -1014,7 +1014,7 @@ a.ui-button:active,
     }
 
     #show-more-tracks {
-        grid-template-columns: 80%;
+        grid-template-columns: 90%;
     }
 
     /*---------Footer-----------*/
