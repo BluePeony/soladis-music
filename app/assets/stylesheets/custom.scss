@@ -1144,3 +1144,94 @@ a.ui-button:active,
     }
 
 }
+
+/*Tablet Portrait mode*/
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait){
+
+    /*----------Header menu-------*/
+    .mobile-menu-bars {
+        display: inline-block;
+        position: absolute;
+        right: 10%;
+        top: 2.5%;
+        color: $heading_color;
+        z-index: 1000;
+    }
+
+    .header-menu {
+        display: none;
+        position: absolute;
+        top: 7%;
+        right: 10%;
+        border: 1px solid $border_color;
+        border-radius: 5px;
+        background: $background_color;
+        z-index: 10;
+        width: 60%;
+
+    }
+
+    .header-menu.mobile-menu-vis {
+        display: block;
+    }
+
+    #header-menu-list {
+        display: flex;
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+
+    #header-menu-list li {
+        margin-bottom: 10px;
+    }
+
+    /*----------Home--------------*/
+    .all-tracks-table {
+        grid-template-columns: 45% 45%;
+    }
+
+    #more-tracks-button  {
+        margin-top: 30px;
+    }
+
+    /*----------All Tracks--------*/
+    #category-filter form {
+        width: 100%;
+    }
+
+    /*----------Single Track------*/
+    .track-show-audio-download {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .track-show-span audio {
+        height: 45px;
+    }
+
+    #track-show-download {
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+
+    .track-show-more {
+        position: relative;
+        left: -100%;
+        width: 200%;
+        margin-top: 100px;
+    }
+    /*----------Video-------------*/
+    .video-wrapper {
+        column-count: 1;
+    }
+    /*----------Footer------------*/
+
+    #footer-menu-list {
+        justify-content: flex-end;
+    }
+
+    #footer-menu-list > li:nth-child(1) {
+        margin-right: 30px;
+    }
+
+}
