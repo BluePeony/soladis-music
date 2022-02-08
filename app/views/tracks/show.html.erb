@@ -22,23 +22,25 @@
 		</div>
 
 		<div id="track-show-attributes">
-			<% if @track.description.length > 0 %>
-				<p><%= @track.description %></p>
-			<% end %>	
-			<p>Lizenz: <%= link_to "CC BY", "https://creativecommons.org/licenses/?lang=en", target: '_blank' %></p>
-			<p>
-				<% if !@track.composer.blank? %>
-					Komposition: <%= @track.composer %>
+			<div id="track-attributes">
+				<% if @track.description.length > 0 %>
+					<p><%= @track.description %></p>
 				<% end %>	
-			</p>
-			<p>Kategorie: <%= @cat_parent.title %> - <%= @cat.title %></p>
-			<p class="track-show-audio-download">
-				<span class="track-show-span"><%= audio_tag(url_for(@track.audio), controls: '') %></span>
-				<span class="track-show-span" id="track-show-download"><%= link_to "Download", url_for(@track.audio), download: true, class: "user-edit-button" %></span>
-			</p>
-			<p>
-				
-			</p>
+				<p>Lizenz: <%= link_to "CC BY", "https://creativecommons.org/licenses/?lang=en", target: '_blank' %></p>
+				<p>
+					<% if !@track.composer.blank? %>
+						Komposition: <%= @track.composer %>
+					<% end %>	
+				</p>
+				<p>Kategorie: <%= @cat_parent.title %> - <%= @cat.title %></p>
+				<p class="track-show-audio-download">
+					<span class="track-show-span"><%= audio_tag(url_for(@track.audio), controls: '') %></span>
+					<span class="track-show-span" id="track-show-download"><%= link_to "Download", url_for(@track.audio), download: true, class: "user-edit-button" %></span>
+				</p>
+				<p>
+					
+				</p>
+			</div>
 
 			<div class="track-show-more">
 				<h4>Weitere Tracks der Kategorie <%= link_to "#{@cat.parent.title} - #{@cat.title}", "/all_tracks?category_id=#{@cat.id}", class:'track-show-more-cat' %></h4>
