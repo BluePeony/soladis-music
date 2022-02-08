@@ -1146,7 +1146,7 @@ a.ui-button:active,
 }
 
 /*Tablet Portrait mode*/
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait){
+@media (min-width: 601px) and (max-width: 820px) and (orientation: portrait){
 
     /*----------Header menu-------*/
     .mobile-menu-bars {
@@ -1241,6 +1241,57 @@ a.ui-button:active,
 
 }
 
+/*iPad Pro Portrait mode*/
+@media (min-width: 821px) and (max-width: 1024px) and (orientation: portrait){
+
+    /*----------Home-------------*/
+    .all-tracks-table {
+        grid-template-columns: 29% 29% 29%;
+    }
+
+    #homepage audio, #all-tracks-page audio {
+        margin-top: 55%;
+    }
+
+    /*----------Video------------*/
+
+    .single-video iframe {
+        height: 250px;
+    }
+
+    /*----------Single Track------*/
+    .track-show-audio-download {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .track-show-span audio {
+        height: 45px;
+    }
+
+    #track-show-download {
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+
+    #track-attributes {
+        height: 47%;
+    }
+
+    .track-show-more {
+        position: relative;
+        left: -100%;
+        width: 200%;
+        margin-top: 50px;
+    }
+
+    /*----------Footer-----------*/
+
+    #footer-menu-list > li:nth-child(1) {
+        margin-right: 30px;
+    }
+}
+
 /*Tablet Landscape mode*/
 @media (min-width: 897px) and (max-width: 1280px) and (orientation: landscape) {
 
@@ -1277,4 +1328,22 @@ a.ui-button:active,
         margin-right: 30px;
     }
 
+}
+
+/*iPad Pro Landscape mode*/
+@media (min-width: 1281px) and (max-width: 1370px) and (orientation: landscape) {
+
+    /*----------Homepage----------*/
+    .all-tracks-table {
+        grid-gap: 40px;
+    }
+
+    .all-tracks-row-audio audio {
+        margin-top: 55%;
+    }
+
+    /*---------Single Track------*/
+    #show-track-page-published .all-tracks-row-info audio {
+        margin-top: 60%;
+    }
 }
