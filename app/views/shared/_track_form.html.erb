@@ -20,10 +20,14 @@
 		<%= f.label :composer, 'Komposition' %>
 		<%= f.text_field :composer %>
 
+		<% if request.path == '/tracks/new' %>
+			<span id="new-track-select-span">
+		<% else %>
+			<span id="edit-track-select-span">
+		<% end %>
 		<%= f.label :category_id, 'Kategorie' %>
-
-		<%= f.select(:category_id, nested_dropdown(Category.all.arrange), prompt: "Kategorie wählen",) %>
-
+		<%= f.select(:category_id, nested_dropdown(Category.all.arrange), prompt: "Kategorie wählen", class:'track-edit-cat') %>
+		</span>
 		<!--Für das Bild -->
 		<% if request.path.include?("/edit") %>
 			<span>Bild zum Track: <i><%= @track.image.filename %></i></span>

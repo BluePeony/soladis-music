@@ -339,12 +339,16 @@ a:hover {
     font-weight: bold;
 }
 
+#new-track-select-span > #track_category_id > option:nth-child(2), #new-track-select-span > #track_category_id > option:nth-child(5), #new-track-select-span > #track_category_id > option:nth-child(15), #new-track-select-span > #track_category_id > option:nth-child(23), #new-track-select-span > #track_category_id > option:nth-child(29) {
+    font-weight: bold;
+}
+
 #category-filter input[type="submit"] {
     font-size: 14px;
     font-family: 'SangBleuSunrise-Regular';
 }
 
-#track_category_id > option:nth-child(1), #track_category_id > option:nth-child(4), #track_category_id > option:nth-child(14), #track_category_id > option:nth-child(22), #track_category_id > option:nth-child(28) {
+#edit-track-select-span > #track_category_id > option:nth-child(1), #edit-track-select-span > #track_category_id > option:nth-child(4), #edit-track-select-span > #track_category_id > option:nth-child(14), #edit-track-select-span > #track_category_id > option:nth-child(22), #edit-track-select-span > #track_category_id > option:nth-child(28) {
     font-weight: bold;
     letter-spacing: 6.5;
 }
