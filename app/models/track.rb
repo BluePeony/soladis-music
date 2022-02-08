@@ -9,7 +9,7 @@ class Track < ApplicationRecord
 	validates :user_id, presence: true
 	validates :image, presence: true, content_type: { in: %w[image/jpeg image/jpg image/png image/gif], message: "must be a valid image format: JPEG, PNG or GIF" },
 										size: 				{ less_than: 5.megabytes, message: "is too big. It should be less than 5 MB" }
-	validates :audio, presence: true, content_type: { in: "audio/x-wav", message: "must be a valid format: WAV"}
+	validates :audio, presence: true, content_type: { in: %w[audio/x-wav, audio/mpeg], message: "must be a valid format: WAV or MP3"}
 
 	has_many :track_videos
 	has_many :videos, through: :track_videos

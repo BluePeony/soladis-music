@@ -45,7 +45,7 @@
 			<%= f.label :audio, 'Track auswählen' %>
 		<% end %>
 
-		<%= f.file_field :audio, accept: "audio/wav" %>
+		<%= f.file_field :audio, accept: "audio/wav, audio/mp3" %>
 
 		<%= f.label :published_status, class: 'user-checkbox' do %>
 			<%= f.check_box :published_status %>
