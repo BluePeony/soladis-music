@@ -8,6 +8,6 @@ Every authenticated user can view all published tracks and edit and delete the o
 
 # local roll out
 1. ```git clone https://github.com/BluePeony/soladis-music.git```
-2. ```bundle install```
+2. ```cd soladis-music && bundle install```
 3. ```rails webpacker:install```
 4. ```rails db:migrate```
