@@ -13,7 +13,7 @@ class Track < ApplicationRecord
 
 	has_many :track_videos
 	has_many :videos, through: :track_videos
-
+	self.per_page = 3
 
 	# Returns a resized image for display
 	def display_image
