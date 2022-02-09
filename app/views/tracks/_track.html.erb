@@ -1,4 +1,5 @@
-<% if current_user && (request.original_url.include?('index?page')) || request.path == tracks_path || request.path == user_path(current_user) %>
+<% if current_user && (request.path == tracks_path || request.path == user_path(current_user)) %>
+
 	<div class="index-row-wrapper">
 		<div class="index-row index-row-title"><%= link_to track.title, track %></div>
 		<% if track.published_status %>
