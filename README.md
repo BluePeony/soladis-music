@@ -1,24 +1,7 @@
-# README
+# soladis-music
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails6 website for music tracks and embedded YouTube-Videos: (https://soladis-music.net) 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It includes static pages as well as a content management system for users, music tracks and videos and is deployed via Heroku. 
+Users can register for the website and after they activated their account they can log in and are redirected to their profile where they can add music tracks and videos. <br>
+Every authenticated user can view all published tracks and edit and delete the own tracks and videos. An admin role can be assigned to a user. Admins can view, edit and delete all tracks and videos. 
