@@ -9,7 +9,7 @@
 		<% end %>
 		<% user = User.find_by(id: track.user_id) %>
 		<div class="index-row">
-			<% if request.get? && request.path == "/tracks" %>
+			<% if request.get? && request.path.include?(tracks_path) %>
 				<%= link_to user.name, user %>
 			<% elsif request.get? && request.path == "/users/#{params[:id]}" %>
 				<%= user.name %>
