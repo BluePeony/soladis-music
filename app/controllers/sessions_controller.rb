@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
   def destroy
   	log_out if logged_in?
   	flash[:success] = "Du hast Dich erfolgreich abgemeldet."
-  	redirect_to root_url
+  	redirect_to "https://soladis-music.net"
   end
 
 end
