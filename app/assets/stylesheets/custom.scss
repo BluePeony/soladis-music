@@ -631,6 +631,10 @@ span#user-name-index {
   width: 55%;
 }
 
+#index-table-users-show {
+	grid-template-columns: auto auto auto;
+}
+
 .index-heading {
     height: 50px;
     line-height: 50px;

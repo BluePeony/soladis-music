@@ -24,6 +24,7 @@
 			<div class="index-row">Entwurf</div>
 		<% end %>
 		<% user = User.find_by(id: track.user_id) %>
+		<% if !(params[:controller] == "users" && params[:action] == "show") %>
 		<div class="index-row">
 			<% if request.get? && request.path.include?(tracks_path) %>
 				<%= link_to user.name, user %>
@@ -31,6 +32,7 @@
 				<%= user.name %>
 			<% end %>
 		</div>
+		<% end %>
 		<div class="index-row index-aktionen">
 			<% if current_user && ((track.user_id == current_user.id) || super_admin_user?(current_user)) %>
 				<span><%= link_to "Bearbeiten", edit_track_path(track), class: 'user-edit-button'%></span>
