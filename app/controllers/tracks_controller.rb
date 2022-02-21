@@ -5,6 +5,7 @@ class TracksController < ApplicationController
   before_action :force_json, only: :search
 
   def home
+
     @chosen_tracks = Track.all.sample(4)
   end
 

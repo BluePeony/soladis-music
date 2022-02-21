@@ -1,4 +1,21 @@
-<% if current_user && ((request.path.include?(tracks_path) && params[:action] == 'index') || request.path == user_path(current_user)) %>
+<% if (params[:controller] == "tracks") && (params[:action] == "all_tracks" || params[:action] == "home") %>
+	<div class="all-tracks-row-item">
+		<%= image_tag track.display_image, alt: "#{track.image.filename}" %>
+		
+		<div class="all-tracks-row-info">
+			<div>
+				<h3><%= link_to track.title, track %></h3>
+			</div>
+			<div class="all-tracks-row-audio">
+				<%= audio_tag(url_for(track.audio), controls: '') %>
+			</div>
+
+		</div>
+		
+		<!--<%= track.title %>	 -->
+	</div>
+
+<% else %>
 	<div class="index-row-wrapper">
 		<div class="index-row index-row-title"><%= link_to track.title, track %></div>
 		<% if track.published_status %>
@@ -22,22 +39,5 @@
 				<span>--</span>
 			<% end %>
 		</div>
-	</div>
-
-<% else %>
-	<div class="all-tracks-row-item">
-		<%= image_tag track.display_image, alt: "#{track.image.filename}" %>
-		
-		<div class="all-tracks-row-info">
-			<div>
-				<h3><%= link_to track.title, track %></h3>
-			</div>
-			<div class="all-tracks-row-audio">
-				<%= audio_tag(url_for(track.audio), controls: '') %>
-			</div>
-
-		</div>
-		
-		<!--<%= track.title %>	 -->
-	</div>
+	</div>	
 <% end %>
