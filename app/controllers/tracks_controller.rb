@@ -48,27 +48,36 @@ class TracksController < ApplicationController
   end
 
   def index
-    if params[:published].blank?
-      @tracks = Track.all
-    else    
-      if (params[:published] == '1') && (params[:unpublished] == '0')
-        @tracks = Track.where(published_status: true)
-      elsif (params[:published] == '0') && (params[:unpublished] == '1')
-        @tracks = Track.where(published_status: false)
-        if !super_admin_user?(@user)
-          @tracks = Track.where("user_id=?", @user.id)
-        end
+    # show all published tracks    
+    if (params[:published] == '1') && (params[:unpublished] == '0') 
+      @tracks = Track.where(published_status: true)
+
+    # show all unpublished tracks
+    elsif (params[:published] == '0') && (params[:unpublished] == '1')
+      @tracks = Track.where(published_status: false)
+
+      # for non-admins show only their own unpublished tracks
+      if !super_admin_user?(@user)
+        @tracks = @tracks.where("user_id=?", @user.id)
+      end
+
+    # for non-admins show all published and all own tracks
+    # for admins show all tracks
+    else
+      if !super_admin_user?(@user)
+        @tracks = Track.where(published_status: true).or(Track.where("user_id=?", @user.id))
       else
-        if !super_admin_user?(@user)
-          @tracks = Track.where(published_status: true).or(Track.where("user_id=?", @user.id))
-        end
+        @tracks = Track.all
       end
     end
-    @tracks = @tracks.paginate(page: params[:page])
+
     if @tracks.size == 0
-      flash[:danger] = "Es existieren noch keine Tracks"
+      flash[:danger] = "No tracks exist yet."
       redirect_to new_track_path
     end
+
+    # add pagination
+    @tracks = @tracks.paginate(page: params[:page])
   end
 
   def destroy
@@ -80,18 +89,23 @@ class TracksController < ApplicationController
   end
 
   def all_tracks
-    if params[:category_id].blank? # show all published tracks
+
+    # show all published tracks
+    if params[:category_id].blank? 
       @tracks = Track.where(published_status: true)
     else
       @category = Category.find_by(id: params[:category_id])
-      if @category.has_parent? # subcategory
+
+      # show tracks in the chosen subcategory
+      if @category.has_parent? 
         @tracks = Track.where(published_status: true, category_id: params[:category_id])
-      else # main category
+
+      # show tracks in the chosen main category  
+      else 
         @tracks = Track.where(published_status: true, category_id: @category.child_ids)
       end
-      
-      
     end
+    
   end
 
   def search
