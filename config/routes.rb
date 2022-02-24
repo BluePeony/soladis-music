@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'tracks#home'
+
   get 'videos/new'
   get 'videos/edit'
   get 'videos/index'
@@ -14,14 +16,14 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
 	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'tracks#home'
-  #get '/home', to: 'tracks#home'
+    
   get '/signup', to: 'users#new'
   get '/in-kuerze', to:  'static_pages#in_kuerze' #test 
   get '/ueber-mich', to: 'static_pages#ueber_mich'
   get '/impressum', to: 'static_pages#impressum'
   get '/datenschutz', to: 'static_pages#datenschutz'
   get '/kontakt', to: 'static_pages#kontakt'
+  
   get '/all_tracks', to: 'tracks#all_tracks'
 
   get '/login', to: 'sessions#new'
