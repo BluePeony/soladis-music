@@ -48,16 +48,20 @@ class TracksController < ApplicationController
   end
 
   def index
-    if (params[:published] == '1') && (params[:unpublished] == '0')
-      @tracks = Track.where(published_status: true)
-    elsif (params[:published] == '0') && (params[:unpublished] == '1')
-      @tracks = Track.where(published_status: false)
-      if !super_admin_user?(@user)
-        @tracks = Track.where("user_id=?", @user.id)
-      end
-    else
-      if !super_admin_user?(@user)
-        @tracks = Track.where(published_status: true).or(Track.where("user_id=?", @user.id))
+    if params[:published].blank?
+      @tracks = Track.all
+    else    
+      if (params[:published] == '1') && (params[:unpublished] == '0')
+        @tracks = Track.where(published_status: true)
+      elsif (params[:published] == '0') && (params[:unpublished] == '1')
+        @tracks = Track.where(published_status: false)
+        if !super_admin_user?(@user)
+          @tracks = Track.where("user_id=?", @user.id)
+        end
+      else
+        if !super_admin_user?(@user)
+          @tracks = Track.where(published_status: true).or(Track.where("user_id=?", @user.id))
+        end
       end
     end
     @tracks = @tracks.paginate(page: params[:page])
