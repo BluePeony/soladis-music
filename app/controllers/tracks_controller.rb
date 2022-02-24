@@ -48,6 +48,12 @@ class TracksController < ApplicationController
   end
 
   def index
+
+    if Track.all.size == 0
+      flash[:danger] = "No tracks exist yet."
+      redirect_to new_track_path
+    end
+
     # show all published tracks    
     if (params[:published] == '1') && (params[:unpublished] == '0') 
       @tracks = Track.where(published_status: true)
@@ -69,11 +75,6 @@ class TracksController < ApplicationController
       else
         @tracks = Track.all
       end
-    end
-
-    if @tracks.size == 0
-      flash[:danger] = "No tracks exist yet."
-      redirect_to new_track_path
     end
 
     # add pagination
@@ -105,7 +106,7 @@ class TracksController < ApplicationController
         @tracks = Track.where(published_status: true, category_id: @category.child_ids)
       end
     end
-    
+
   end
 
   def search
