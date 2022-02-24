@@ -48,12 +48,23 @@ class TracksController < ApplicationController
   end
 
   def index
-    @tracks = Track.all.paginate(page: params[:page])
+    if (params[:published] == '1') && (params[:unpublished] == '0')
+      @tracks = Track.where(published_status: true)
+    elsif (params[:published] == '0') && (params[:unpublished] == '1')
+      @tracks = Track.where(published_status: false)
+      if !super_admin_user?(@user)
+        @tracks = Track.where("user_id=?", @user.id)
+      end
+    else
+      if !super_admin_user?(@user)
+        @tracks = Track.where(published_status: true).or(Track.where("user_id=?", @user.id))
+      end
+    end
+    @tracks = @tracks.paginate(page: params[:page])
     if @tracks.size == 0
       flash[:danger] = "Es existieren noch keine Tracks"
       redirect_to new_track_path
     end
-
   end
 
   def destroy

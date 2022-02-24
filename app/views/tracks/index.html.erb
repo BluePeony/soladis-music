@@ -22,18 +22,6 @@
 		<% end %>
 	</div>
 
-	<% if (params[:published] == '1') && (params[:unpublished] == '0') %> <!--nur online anzeigen -->
-		<% @tracks = @tracks.where(published_status: true).paginate(page: params[:page]) %>
-	<% elsif (params[:published] == '0') && (params[:unpublished] == '1') %> <!--nur Entwürfe anzeigen -->
-		<% @tracks = @tracks.where(published_status: false).paginate(page: params[:page]) %>
-		<% if !super_admin_user?(@user) %>
-			<% @tracks = @tracks.where("user_id=?", @user.id).paginate(page: params[:page]) %>
-		<% end %>
-	<% else %>
-		<% if !super_admin_user?(@user) %>
-			<% @tracks = @tracks.where(published_status: true).or(@tracks.where("user_id=?", @user.id)).paginate(page: params[:page]) %>
-		<% end %>	
-	<% end %>
 	<div>
 		<p>Anzahl der Tracks: <%= @tracks.count %> </p>
 	</div>
