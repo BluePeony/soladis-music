@@ -1,4 +1,4 @@
-<% if (params[:controller] == "tracks") && (params[:action] == "all_tracks" || params[:action] == "home") %>
+<% if (params[:controller] == "tracks") && (params[:action] == "all_tracks" || params[:action] == "home") || params[:action] == 'show' %>
 	<div class="all-tracks-row-item">
 		<%= image_tag track.display_image, alt: "#{track.image.filename}" %>
 		
