@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/kontakt', to: 'static_pages#kontakt'
   
   get '/all_tracks', to: 'tracks#all_tracks'
+  
+  get '/music', to: 'tracks#music'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

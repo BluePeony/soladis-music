@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="track-show-more">
-				<h4>Weitere Tracks der Kategorie <%= link_to "#{@cat.parent.title} - #{@cat.title}", "/all_tracks?category_id=#{@cat.id}", class:'track-show-more-cat' %></h4>
+				<h4>Weitere Tracks der Kategorie <%= link_to "#{@cat.parent.title} - #{@cat.title}", "/music?category_id=#{@cat.id}", class:'track-show-more-cat' %></h4>
 				<% all_tracks = Track.where(category_id: @track.category_id).to_a %>
 				<% all_tracks = all_tracks.select {|t| t!= @track } %>
 				<% if all_tracks.size > 2 %>

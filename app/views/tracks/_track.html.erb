@@ -1,4 +1,6 @@
-<% if (params[:controller] == "tracks") && (params[:action] == "all_tracks" || params[:action] == "home") || (params[:action] == 'show' && !request.path.include?('/users')) %>
+<!-- use only for certain actions in tracks controller; use not on users profile page -->
+<% if (params[:controller] == "tracks") && (params[:action] == "music" || params[:action] == "home") || 
+																					 (params[:action] == 'show' && !request.path.include?('/users')) %>
 	<div class="all-tracks-row-item">
 		<%= image_tag track.display_image, alt: "#{track.image.filename}" %>
 		
@@ -9,12 +11,10 @@
 			<div class="all-tracks-row-audio">
 				<%= audio_tag(url_for(track.audio), controls: '') %>
 			</div>
-
 		</div>
-		
-		<!--<%= track.title %>	 -->
 	</div>
 
+<!-- use for index view and on users profile page -->
 <% else %>
 	<div class="index-row-wrapper">
 		<div class="index-row index-row-title"><%= link_to track.title, track %></div>
@@ -36,10 +36,14 @@
 		<div class="index-row index-aktionen">
 			<% if current_user && ((track.user_id == current_user.id) || super_admin_user?(current_user)) %>
 				<span><%= link_to "Bearbeiten", edit_track_path(track), class: 'user-edit-button'%></span>
-				<span><%= link_to "Löschen", track_path(track), method: :delete, data: {confirm: "Willst Du wirklich diesen Track löschen?"}, class: 'user-edit-button', id: 'track-delete-button' %></span>
+				<span><%= link_to "Löschen", track_path(track), method: :delete, 
+									data: {confirm: "Willst Du wirklich diesen Track löschen?"}, 
+									class: 'user-edit-button', id: 'track-delete-button' %></span>
 			<% else %>
 				<span>--</span>
 			<% end %>
 		</div>
 	</div>	
 <% end %>
+
+

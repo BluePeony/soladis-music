@@ -109,6 +109,26 @@ class TracksController < ApplicationController
 
   end
 
+  def music
+
+    # show all published tracks
+    if params[:category_id].blank? 
+      @tracks = Track.where(published_status: true)
+    else
+      @category = Category.find_by(id: params[:category_id])
+
+      # show tracks in the chosen subcategory
+      if @category.has_parent? 
+        @tracks = Track.where(published_status: true, category_id: params[:category_id])
+
+      # show tracks in the chosen main category  
+      else 
+        @tracks = Track.where(published_status: true, category_id: @category.child_ids)
+      end
+    end
+
+  end
+
   def search
     t = params[:t].downcase
     @tracks = Track.where("title LIKE ?", "%#{t}%")
