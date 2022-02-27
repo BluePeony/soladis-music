@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :index, :destroy]
+  
   before_action :get_user, only: [:new, :create, :edit, :update, :destroy, :index]
   before_action :about_track, only: [:edit, :update, :show, :destroy]
   before_action :force_json, only: :search
@@ -47,6 +48,11 @@ class TracksController < ApplicationController
     @cat = Category.find_by(id: @track.category_id)
   end
 
+
+
+
+
+
   def index
 
     if Track.all.size == 0
@@ -80,6 +86,11 @@ class TracksController < ApplicationController
     # add pagination
     @tracks = @tracks.paginate(page: params[:page])
   end
+
+
+
+
+
 
   def destroy
     title = @track.title    

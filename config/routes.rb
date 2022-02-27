@@ -23,23 +23,21 @@ Rails.application.routes.draw do
   get '/impressum', to: 'static_pages#impressum'
   get '/datenschutz', to: 'static_pages#datenschutz'
   get '/kontakt', to: 'static_pages#kontakt'
-  
   get '/all_tracks', to: 'tracks#all_tracks'
-  
-  get '/music', to: 'tracks#music'
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   
 
   resources :users
+  resources :videos
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
+  get '/music', to: 'tracks#music'
+
   resources :tracks
 
-  
-  resources :videos
+
 
 end
