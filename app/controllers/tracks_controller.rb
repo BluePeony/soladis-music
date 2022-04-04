@@ -5,8 +5,8 @@ class TracksController < ApplicationController
   before_action :about_track, only: [:edit, :update, :show, :destroy]
   before_action :force_json, only: :search
 
+  # Randomly chooses 4 tracks to display on the homepage
   def home
-
     @chosen_tracks = Track.all.sample(4)
   end
 
@@ -14,6 +14,7 @@ class TracksController < ApplicationController
     @track = @user.tracks.build
   end
 
+  # Creates a new track
   def create
     @track = @user.tracks.build(track_params)
     @track.image.attach(params[:track][:image])
@@ -33,6 +34,7 @@ class TracksController < ApplicationController
 
   end
 
+  # Updates a track
   def update
     if @track.update(track_params)
       flash[:success] = "Deine Änderungen wurden gespeichert."
@@ -43,16 +45,13 @@ class TracksController < ApplicationController
     end
   end
 
+  # Shows a track
   def show
     @cat_parent = Category.find_by(id: @track.category_id).parent
     @cat = Category.find_by(id: @track.category_id)
   end
 
-
-
-
-
-
+  # Shows all tracks, according to the chosen filter option
   def index
 
     if Track.all.size == 0
@@ -73,7 +72,7 @@ class TracksController < ApplicationController
         @tracks = @tracks.where("user_id=?", @user.id)
       end
 
-    # for non-admins show all published and all own tracks
+    # for non-admins show all published and all own unpublished tracks
     # for admins show all tracks
     else
       if !super_admin_user?(@user)
@@ -88,10 +87,7 @@ class TracksController < ApplicationController
   end
 
 
-
-
-
-
+  # Destroys a track
   def destroy
     title = @track.title    
     if @track.destroy
@@ -100,6 +96,7 @@ class TracksController < ApplicationController
     end  
   end
 
+  # Shows all published tracks according to the chosen category
   def all_tracks
 
     # show all published tracks
@@ -120,6 +117,7 @@ class TracksController < ApplicationController
 
   end
 
+  # Shows all published tracks according to the chosen category
   def music
 
     # show all published tracks
@@ -155,15 +153,14 @@ class TracksController < ApplicationController
       @user = current_user
     end
 
+    # Gets information about a track
     def about_track
       @track = Track.find_by(id: params[:id])
-
 
       if !@track
         flash[:danger] = "Der gesuchte Track existiert nicht."
         redirect_to root_url
       end
-
 
       if "edit_update_destroy".include?(params[:action])
         

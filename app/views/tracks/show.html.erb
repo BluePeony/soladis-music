@@ -8,6 +8,8 @@
 	
 	<h2>
 		<%= @track.title %>
+
+		<!-- show edit and delete buttons to authors or admis only -->
 		<% if current_user && ((@track.user_id == current_user.id) || super_admin_user?(current_user)) %>
 			<%= link_to (fa_icon "pen"), edit_track_path(@track), class: "h2-fa-icon", alt: "Bearbeiten", title: "Bearbeiten" %>
 			<%= link_to (fa_icon "trash-alt"), track_path(@track), method: :delete, data: { confirm: "Willst Du den Track wirklich löschen?" }, class: "h2-fa-icon", alt: "Löschen", title: "Löschen" %>	

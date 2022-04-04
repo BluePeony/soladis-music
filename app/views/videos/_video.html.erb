@@ -1,10 +1,11 @@
 
 <div class="single-video">
 	<span id="video-edit-icons">
-			<% if current_user && (current_user.id == video.user_id || super_admin_user?(current_user)) %>
-				<%= link_to (fa_icon "pen"), edit_video_path(video), class: "h2-fa-icon", alt: "Bearbeiten", title: "Bearbeiten" %>
-				<%= link_to (fa_icon "trash-alt"), video_path(video), method: :delete, data: { confirm: "Willst Du das Video wirklich löschen?" }, class: "h2-fa-icon", alt: "Löschen", title: "Löschen" %>
-			<% end %>
+		<!-- show edit and delete buttons to authors or admins only -->
+		<% if current_user && (current_user.id == video.user_id || super_admin_user?(current_user)) %>
+			<%= link_to (fa_icon "pen"), edit_video_path(video), class: "h2-fa-icon", alt: "Bearbeiten", title: "Bearbeiten" %>
+			<%= link_to (fa_icon "trash-alt"), video_path(video), method: :delete, data: { confirm: "Willst Du das Video wirklich löschen?" }, class: "h2-fa-icon", alt: "Löschen", title: "Löschen" %>
+		<% end %>
 	</span><br>
 	<iframe width="100%" height="345" src="<%= video.url %>"></iframe><br>
 	<span>

@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+	# Creates custom title for each page
 	def full_title (page_title = "")
 		base_title = "Soladis-Music"
 		if page_title == ""
@@ -13,6 +14,7 @@ module ApplicationHelper
 		return Time.now.year
 	end
 
+	# Arrages a nested dropdown for categories filter
 	def nested_dropdown(items)
     result = []
     items.map do |item, sub_items|

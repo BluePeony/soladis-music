@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
+  # Creates a new user
   def create
   	@user = User.new(user_params)
   	if @user.save
@@ -22,16 +23,19 @@ class UsersController < ApplicationController
   	end
   end
 
+  # Shows a user
   def show
     @user = User.find(params[:id])
     @tracks = @user.tracks.paginate(page: params[:page])
     redirect_to root_url and return unless @user.activated?
   end
 
+  # Edits a user
   def edit
   	@user = User.find_by(id: params[:id])
   end
 
+  # Updates a user
   def update
     if @user.update(user_params)
       flash[:success] = "Dein Profil wurde erfolgreich aktualisiert."
@@ -41,10 +45,12 @@ class UsersController < ApplicationController
     end  	
   end
 
+  # Shows all users
   def index
   	@users = User.where(activated: true).paginate(page: params[:page])
   end
 
+  # Destroys a user
   def destroy
     user = User.find(params[:id])
     if user.id != 1

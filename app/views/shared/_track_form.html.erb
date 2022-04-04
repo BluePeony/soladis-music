@@ -1,7 +1,7 @@
 <div class="soladis-form", id="track-form">
 
 	<% form_parameters = {model: @track, local: true} %>
-	<% if request.path.include?("/edit") %> <!-- Wow, anscheinend braucht man das gar nicht. Man kann auch mit normalen form_parameters arbeiten bei edit, ohne spezielle URL... -->
+	<% if request.path.include?("/edit") %> 
 		<% form_parameters[:url] = track_path(@track) %>	
 	<% end %>
 
@@ -25,10 +25,11 @@
 		<% else %>
 			<span id="edit-track-select-span">
 		<% end %>
+
 		<%= f.label :category_id, 'Kategorie' %>
 		<%= f.select(:category_id, nested_dropdown(Category.all.arrange), prompt: "Kategorie wählen", class:'track-edit-cat') %>
 		</span>
-		<!--Für das Bild -->
+		<!--For the image -->
 		<% if request.path.include?("/edit") %>
 			<span>Bild zum Track: <i><%= @track.image.filename %></i></span>
 			<div id="track-image-edit"><%= image_tag @track.image %></div>
@@ -39,7 +40,7 @@
 		
 		<%= f.file_field :image, accept: "image/jpeg,image/jpg,image/png,image/gif" %>
 
-		<!-- Für das Audio -->
+		<!-- For the audio -->
 		<% if request.path.include?("/edit")%>
 			<span>Track-Audio: <i><%= @track.audio.filename %></i></span>
 			<div class="edit-audio">

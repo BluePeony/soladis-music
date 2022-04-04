@@ -1,4 +1,4 @@
-class VideosController < ApplicationController
+ class VideosController < ApplicationController
 	before_action :get_user, only: [:new, :create, :edit, :update, :destroy]
 	before_action :about_video, only: [:show, :edit, :update, :destroy]
 
@@ -6,6 +6,7 @@ class VideosController < ApplicationController
   	@video = @user.videos.build
   end
 
+  # Creates new video
   def create
   	track_titles = params[:video][:used_tracks].gsub(", ", ",").split(',')
   	
@@ -29,6 +30,7 @@ class VideosController < ApplicationController
   def edit
   end
 
+  # Updates an existing video
   def update
   	existing_used_tracks = @video.used_tracks.split(', ')
   	new_used_tracks = params[:video][:used_tracks].split(', ')
@@ -36,14 +38,14 @@ class VideosController < ApplicationController
   	track_videos_to_create = new_used_tracks - existing_used_tracks
   	if @video.update(video_params)
   		flash[:success] = "Die Änderungen wurden gespeichert."
-  		if track_videos_to_delete != [] # Track-Verbindungen, die zu löschen sind
+  		if track_videos_to_delete != [] # Track connections to be deleted
   			track_videos_to_delete.each do |t|
   				t = Track.find_by(title: t)
   				@video.track_videos.find_by(track_id: t.id).destroy
   			end
   		end
 
-  		if track_videos_to_create != [] # Verbindungen, die zu erzeugen sind
+  		if track_videos_to_create != [] # Track connections to be created
   			track_videos_to_create.each do |t|
   				t = Track.find_by(title: t)
   				@video.track_videos.create(track_id: t.id)
@@ -56,6 +58,7 @@ class VideosController < ApplicationController
   	end
   end
 
+  # Shows all videos
   def index
   	@videos = Video.all
   	if @videos.size == 0
@@ -64,6 +67,7 @@ class VideosController < ApplicationController
   	end
   end
 
+  # Destroys a video
   def destroy
 	  TrackVideo.where(video_id: @video.id).each { |tv| tv.destroy }
 	  if @video.destroy
@@ -92,6 +96,7 @@ class VideosController < ApplicationController
   		end
   	end
 
+    # Information about a video
   	def about_video
   		@video = Video.find_by(id: params[:id])
   		if !@video

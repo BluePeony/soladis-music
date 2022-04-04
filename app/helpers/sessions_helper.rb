@@ -48,7 +48,6 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
-	# helpers/sessions_helper.rb
 	# Confirms a logged-in user.
 	def logged_in_user
 		unless logged_in?
@@ -57,7 +56,6 @@ module SessionsHelper
 			redirect_to login_url
 		end
 	end
-
 
 	# Logs out the current user
 	def log_out
