@@ -1,7 +1,6 @@
 class TracksController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :edit, :update, :index, :destroy]
-  
-  before_action :get_user, only: [:new, :create, :edit, :update, :destroy, :index]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :index, :destroy]  # logged_in_user method defined in app/helpers/sessions_helpers.rb
+  before_action :get_user, only: [:new, :create, :edit, :update, :index, :destroy] # get_user method defined in /app/heplers/sessions_helper.rb
   before_action :about_track, only: [:edit, :update, :show, :destroy]
   before_action :force_json, only: :search
 
@@ -23,7 +22,7 @@ class TracksController < ApplicationController
       if @track.published_status
         @track.update_attribute(:published_at, Time.zone.now)
       end
-      flash[:success] = "Neuer Track wurde erstellt"
+      flash[:success] = "Neuer Track wurde erstellt" # success message: New track has been created
       redirect_to @track
     else
       render 'new'
@@ -31,16 +30,15 @@ class TracksController < ApplicationController
   end
 
   def edit
-
   end
 
   # Updates a track
   def update
     if @track.update(track_params)
-      flash[:success] = "Deine Änderungen wurden gespeichert."
+      flash[:success] = "Deine Änderungen wurden gespeichert." # success messages: Your changes have been saved.
       redirect_to @track
     else
-      flash.now[:danger] = "Deine Änderungen wurden nicht gespeichert."
+      flash.now[:danger] = "Deine Änderungen wurden nicht gespeichert." # failure message: Your changes have not been saved.
       render 'edit'
     end
   end
@@ -53,27 +51,26 @@ class TracksController < ApplicationController
 
   # Shows all tracks, according to the chosen filter option
   def index
-
     if Track.all.size == 0
       flash[:danger] = "No tracks exist yet."
       redirect_to new_track_path
     end
 
-    # show all published tracks    
+    # Shows all published tracks    
     if (params[:published] == '1') && (params[:unpublished] == '0') 
       @tracks = Track.where(published_status: true)
 
-    # show all unpublished tracks
+    # Shows all unpublished tracks
     elsif (params[:published] == '0') && (params[:unpublished] == '1')
       @tracks = Track.where(published_status: false)
 
-      # for non-admins show only their own unpublished tracks
+      # For non-admins show only their own unpublished tracks
       if !super_admin_user?(@user)
         @tracks = @tracks.where("user_id=?", @user.id)
       end
 
-    # for non-admins show all published and all own unpublished tracks
-    # for admins show all tracks
+    # For non-admins show all published and all own unpublished tracks
+    # For admins show all tracks
     else
       if !super_admin_user?(@user)
         @tracks = Track.where(published_status: true).or(Track.where("user_id=?", @user.id))
@@ -82,7 +79,7 @@ class TracksController < ApplicationController
       end
     end
 
-    # add pagination
+    # Adds pagination
     @tracks = @tracks.paginate(page: params[:page])
   end
 
@@ -91,46 +88,25 @@ class TracksController < ApplicationController
   def destroy
     title = @track.title    
     if @track.destroy
-      flash[:success] = "Track '#{title}' gelöscht."
+      flash[:success] = "Track '#{title}' gelöscht." # success message: Track destroyed.
       redirect_to tracks_path
     end  
   end
 
   # Shows all published tracks according to the chosen category
-  def all_tracks
-
-    # show all published tracks
-    if params[:category_id].blank? 
-      @tracks = Track.where(published_status: true)
-    else
-      @category = Category.find_by(id: params[:category_id])
-
-      # show tracks in the chosen subcategory
-      if @category.has_parent? 
-        @tracks = Track.where(published_status: true, category_id: params[:category_id])
-
-      # show tracks in the chosen main category  
-      else 
-        @tracks = Track.where(published_status: true, category_id: @category.child_ids)
-      end
-    end
-
-  end
-
-  # Shows all published tracks according to the chosen category
   def music
 
-    # show all published tracks
+    # Show all published tracks
     if params[:category_id].blank? 
       @tracks = Track.where(published_status: true)
     else
       @category = Category.find_by(id: params[:category_id])
 
-      # show tracks in the chosen subcategory
+      # Show tracks in the chosen subcategory
       if @category.has_parent? 
         @tracks = Track.where(published_status: true, category_id: params[:category_id])
 
-      # show tracks in the chosen main category  
+      # Show tracks in the chosen main category  
       else 
         @tracks = Track.where(published_status: true, category_id: @category.child_ids)
       end
@@ -145,35 +121,35 @@ class TracksController < ApplicationController
 
   private
 
+    # Declares which track attributes may be modified through the web
     def track_params
       params.require(:track).permit(:title, :description, :item_number, :composer, :category_id, :published_status, :image, :audio)
     end
 
-    def get_user
-      @user = current_user
-    end
 
     # Gets information about a track
     def about_track
       @track = Track.find_by(id: params[:id])
 
       if !@track
-        flash[:danger] = "Der gesuchte Track existiert nicht."
+        flash[:danger] = "Der gesuchte Track existiert nicht." # failure message: The requested track does not exist.
         redirect_to root_url
       end
 
+      # Prepares flash messages for different actions
       if "edit_update_destroy".include?(params[:action])
         
         if params[:action] == 'edit'
-          action = "Bearbeitung von #{@track.title}"
+          action = "Bearbeitung von #{@track.title}" # action = "Editing of ..."
         elsif params[:action] == 'update'
-          action = "Speicherung der Änderungen für #{@track.title}"
+          action = "Speicherung der Änderungen für #{@track.title}" # action = "Saving of changes for ..."
         elsif params[:action] == 'destroy'
-          action = "Löschung des Tracks"
+          action = "Löschung des Tracks" # action = "Deleting of track"
         end
 
-        if ((@track.user_id != @user.id) && !super_admin_user?(@user)) # Autor || Admin || Superadmin
-          flash[:danger] = "Du hast keine Berechtigung für #{action}"
+        # If the logged in user is neither the author of the track nor admin/superadmin
+        if ((@track.user_id != @user.id) && !super_admin_user?(@user)) 
+          flash[:danger] = "Du hast keine Berechtigung für #{action}" # failure message: You don't have the persmission for ...
           redirect_to root_url
         end
         
