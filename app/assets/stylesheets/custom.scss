@@ -976,6 +976,8 @@ a.ui-button:active,
 
     .single-video {
         margin-bottom: 15px;
+        page-break-inside: avoid;
+        break-inside: avoid-column; 
     }
 
     .single-video iframe {
