@@ -781,7 +781,10 @@ span#user-name-index {
     height: 25px;
     width: 95%;
     opacity: 0.9;
-    margin-top: 60%;
+    //margin-top: 60%;
+    position: absolute;
+    left: 2%;
+    top: 85%;
 }
 
 .all-tracks-row-item img {
