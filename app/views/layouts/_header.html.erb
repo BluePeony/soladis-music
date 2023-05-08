@@ -9,9 +9,9 @@
 		</div>	
 	</div>
 
-	<div class="mobile-menu-bars"><%= fa_icon "bars" %></div>
+	<div class="mobile-menu-bars" onclick="mobileMenuFunc()"><%= fa_icon "bars" %></div>
 
-	<nav class="header-menu">
+	<nav class="header-menu" id="header-menu-id">
 		<ul class="nav-ul" id="header-menu-list">
 			<li>
 				<%= active_link_to('Home', 'https://soladis-music.net', active: :exclusive) %>
@@ -64,3 +64,9 @@
 		</ul>
 	</nav>
 </header>
+<script>
+	function mobileMenuFunc() {
+   var element = document.getElementById("header-menu-id");
+   element.classList.toggle("mobile-menu-vis");
+}
+</script>
