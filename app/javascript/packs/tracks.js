@@ -65,7 +65,8 @@ document.addEventListener("turbolinks:load", function() {
     
       //show-hide mobile menu
       $(".mobile-menu-bars").click(function(){
-        $(".header-menu").toggleClass("mobile-menu-vis");
+        //$(".header-menu").toggleClass("mobile-menu-vis");
+        //$(".header-menu").classList.toggle("mobile-menu-vis");
       });
     });
 });
